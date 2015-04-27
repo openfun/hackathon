@@ -2,8 +2,23 @@
 
 ## Présentation
 
-TODO
-- expliquer la différence entre lms et cms
+EDX est une plate-forme de MOOC (Massive open online courses).
+Ce sont des cours en ligne ouverts à tous. Les MOOCS permettent un accès facile à un ensemble de formations (histoire, maths, physique, droit économie...)
+
+snap
+
+Les moocs ne sont pas composés uniquement de vidéos de cours. Ils s'accompagnent aussi de nombreuses activités, jeux
+
+snap.
+
+Les étudiants suivent les mooc depuis le LMS:
+
+snap
+
+Et les professeurs concoivent les mooc depuis un (CMS content management system), appelé aussi Studio:
+
+snap
+
 
 ## Premiers pas
 

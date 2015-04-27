@@ -2,22 +2,22 @@
 
 ## Présentation
 
-EDX est une plate-forme de MOOC (Massive open online courses).
-Ce sont des cours en ligne ouverts à tous. Les MOOCS permettent un accès facile à un ensemble de formations (histoire, maths, physique, droit économie...)
+EDX est une plate-forme de MOOC (Massive Open Online Courses).
+Ce sont des cours en ligne ouverts à tous. Les MOOCS permettent un accès facile et gratuit à un ensemble de formations. (Histoire, Maths, Physique, Droit, Economie, Informatique ...)
 
-snap
+![](https://github.com/openfun/hackathon/blob/add-global-intro/themes/static/moocs.png?raw=true)
 
-Les moocs ne sont pas composés uniquement de vidéos de cours. Ils s'accompagnent aussi de nombreuses activités, jeux
+Les moocs ne sont pas composés uniquement de vidéos de cours. Ils s'accompagnent aussi de nombreuses activités, jeux ...
 
-snap.
+![](https://github.com/openfun/hackathon/blob/add-global-intro/themes/static/dragdrop.png?raw=true)
 
-Les étudiants suivent les mooc depuis le LMS:
+Les étudiants suivent des moocs depuis le *LMS* (Learning Management System):
 
-snap
+![](https://github.com/openfun/hackathon/blob/add-global-intro/themes/static/lms.png?raw=true)
 
-Et les professeurs concoivent les mooc depuis un (CMS content management system), appelé aussi Studio:
+Et les professeurs concoivent ces moocs depuis un *CMS* (Content Management System), appelé aussi *Studio*:
 
-snap
+![](https://github.com/openfun/hackathon/blob/add-global-intro/themes/static/cms.png?raw=true)
 
 
 ## Premiers pas

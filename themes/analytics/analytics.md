@@ -72,26 +72,25 @@ mieux est de :
 1. créer une requête via Kibana, dans l'onglet "Discover".
 2. récupérer cette requête au format JSON, en repliant le graphe de résultats, puis sous l'onglet "Request". Par exemple :
     
-
-    {
-      "size": 500,
-      "sort": {
-        "@timestamp": "desc"
-      },
+```
+{
+  "size": 500,
+  "sort": {
+    "@timestamp": "desc"
+  },
+  "query": {
+    "filtered": {
       "query": {
-        "filtered": {
-          "query": {
-            "query_string": {
-              "query": "*",
-              "analyze_wildcard": true
-            }
-          }
+        "query_string": {
+          "query": "*",
+          "analyze_wildcard": true
         }
       }
     }
-
+  }
+}
+```
 
 3. Copier-coller cette requête dans un fichier `query.json`, puis réaliser la requête à l'aide du script fourni dans ce dépôt :
 
-
-    hackathon/themes/analytics/es.py query.json > result.json
+    ```hackathon/themes/analytics/es.py query.json > result.json```

@@ -58,8 +58,9 @@ configuration `logstash.conf` fourni dans ce dépôt :
 ### Visualisation des résultats dans Kibana
 
 Après avoir inséré quelques évènements dans ElasticSearch, vous pouvez lancer
-Kibana et observer ces évènements en ouvrant http://localhost:5601 dans votre
-navigateur. N'oubliez pas de sélectionner un intervalle de temps couvert par
+Kibana et observer ces évènements en ouvrant
+[http://localhost:5601](http://localhost:5601) dans votre navigateur. N'oubliez
+pas de sélectionner un intervalle de temps couvert par
 les logs (en haut à droite).
 
 ### Réaliser des requêtes manuelles sur ElasticSearch
@@ -71,6 +72,7 @@ mieux est de :
 1. créer une requête via Kibana, dans l'onglet "Discover".
 2. récupérer cette requête au format JSON, en repliant le graphe de résultats, puis sous l'onglet "Request". Par exemple :
     
+
     {
       "size": 500,
       "sort": {
@@ -88,6 +90,8 @@ mieux est de :
       }
     }
 
+
 3. Copier-coller cette requête dans un fichier `query.json`, puis réaliser la requête à l'aide du script fourni dans ce dépôt :
+
 
     hackathon/themes/analytics/es.py query.json > result.json

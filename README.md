@@ -2,8 +2,13 @@
 
 ## Présentation
 
-TODO
-- expliquer la différence entre lms et cms
+L'application OpenedX est séparée en deux composants majeurs ou "sites" bien distincts:
+- Le LMS ou Learning Management System: l'interface permettant aux étudiants de se connecter et de suivre leur cours. Il s'agit de https://www.france-universite-numerique-mooc.fr par exemple.
+- Le Studio (ou CMS): l'interface permettant aux enseignants de construire les cours et de les publier. Cette interface a un accès limité aux enseignants et personnel enseignant.
+
+Lorsque vous installez OpenFUN, vous aurez sur une même machine les deux "sites". L'un répondant sur http://127.0.0.1:8000 (LMS) et l'autre sur http://127.0.0.1:8001 (Studio)
+
+
 
 ## Premiers pas
 
@@ -51,7 +56,7 @@ Si vous avez correctement lancé votre machine virtuelle, vous pouvez maintenant
     ######### Commandes exécutées dans la VM
 
     # La plupart des applications sont exécutées par l'utilisateur edxapp
-    sudo su edxapp 
+    sudo su edxapp
 
     # Cette commande réalise à la fois l'installation des dépendances, la
     # collecte des données statiques et le lancement de l'application LMS
@@ -65,10 +70,10 @@ Win!
     # exécuter à la place de la commande précédente :
     fun lms.dev --fast
 
-    # De même, dans un autre terminal, vous pouvez lancer le CMS :
+    # De même, dans un autre terminal, vous pouvez lancer le Studio/CMS :
     fun cms.dev --fast
 
-Le CMS est alors visible à l'adresse http://127.0.0.1:8001.
+Le Studio est alors visible à l'adresse http://127.0.0.1:8001.
 
 Vous pouvez également lancer les tests associés à FUN :
 

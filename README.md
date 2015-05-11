@@ -4,17 +4,17 @@
 
 Edx est une platforme web qui livre des cours en ligne ouverts à tous, les MOOCs - Massive Online Open Courses.
 
-Les cours sont édité dans le « Studio ». Le Studio est une section réservée aux enseignants, aux personnes responsables de maintenir les cours. Il s'agit une interface web d'où l'on peut éditer les contenus de cours, gérer les vidéos et les autres ressources à destination des apprenant. Depuis le Studio, on peut gérer les calendriers de cours, gérer les notes des apprenants, concevoir les quiz, etc.
+Les cours sont édité dans le « Studio ». Le Studio est une section réservée aux enseignants, aux personnes responsables de maintenir les cours. Il s'agit une interface web d'où l'on peut éditer les contenus de cours, gérer les vidéos et les autres ressources à destination des apprenants. Depuis le Studio, on peut gérer les calendriers de cours, gérer les notes des apprenants, concevoir les quiz, etc.
 
-Le LMS - Learning Management System, est la section publique de la plateforme Edx. Les cours qui sont édités dans le Studio sont publiés dans le LMS et disponibles aux apprenants. Le LMS est la partie la plus exposée au publique : les apprenants peuvent s'inscrirent, consulter les cours, répondre aux quizs, accéder aux résultats, etc.
+Le LMS - Learning Management System, est la section publique de la plateforme Edx. Les cours qui sont édités dans le Studio sont publiés dans le LMS et disponibles aux apprenants. Le LMS est la partie la plus exposée au publique : les apprenants peuvent s'inscrirent, consulter les cours, répondre aux quiz, accéder aux résultats, etc.
 
 ## Technologies
 
 Edx est construit sur le framework Python Django et utilise le système de template Mako. Côté client, le code est écrit principalement en Javascript. Certaines sections sont écritent en CoffeeScript. Backbone.js est aussi utilisé. Edx utilise SASS pour le code CSS.
 
 Le LMS et le Studio sont deux applications web qui utilisent différentes sources de stockage, par exemple :
-- Les contenus de cours sont stocké dans des bases MongoDB
-- Les informations des profils étudiants sont stocké dans MySQL
+- Les contenus de cours sont stockés dans des bases MongoDB
+- Les informations des profils étudiants sont stockées dans MySQL
 - Les vidéos sont hébergées en externe
 
 Pour plus d'information sur l'architecture technique : https://open.edx.org/contributing-to-edx/architecture

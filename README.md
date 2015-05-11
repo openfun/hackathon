@@ -4,12 +4,13 @@
 
 Edx est une platforme web qui permet de délivrer des cours en ligne ouverts à tous, les MOOCs - Massive Online Open Courses.
 
-Les cours sont édité dans le « Studio ». Le Studio est une section réservée aux enseignants, aux personnes responsables de maintenir les cours. Il s'agit une interface web d'où l'on peut éditer les contenus de cours, gérer les vidéos et les autres ressources à destination des apprenants. Depuis le Studio, on peut gérer les calendriers de cours, gérer les notes des apprenants, concevoir les quiz, etc.
+Les cours sont édités dans le « Studio ». Le Studio est une section réservée aux enseignants et aux personnes responsables de maintenir les cours. Il s'agit d'une interface web d'où l'on peut éditer les contenus de cours, gérer les vidéos et les autres ressources à destination des apprenants. Depuis le Studio, on peut gérer les calendriers de cours, gérer les barêmes de notation des apprenants, concevoir les quiz, etc.
 
-Le LMS - Learning Management System, est la section publique de la plateforme Edx. Les cours qui sont édités dans le Studio sont publiés dans le LMS et disponibles aux apprenants. Le LMS est la partie la plus exposée au publique et permet aux apprenants de se connecter et de suivre leur cours. Il s'agit de https://www.france-universite-numerique-mooc.fr par exemple..
+Le LMS - Learning Management System, est la section publique de la plateforme Edx. Les cours qui sont édités dans le Studio sont publiés dans le LMS et disponibles aux apprenants. Le LMS est la partie la plus exposée et permet notamment aux apprenants de se connecter et de suivre leur cours.
+Il s'agit de https://www.france-universite-numerique-mooc.fr par exemple..
 Les apprenants peuvent s'inscrirent, consulter les cours, répondre aux quiz, accéder aux résultats, etc.
 
-Lorsque vous installez OpenFUN, vous aurez sur une même machine les deux "sites". L'un répondant sur http://127.0.0.1:8000 (LMS) et l'autre sur http://127.0.0.1:8001 (Studio)
+Lorsque vous installez OpenFUN ou Open edX, vous aurez sur une même machine les deux "sites". L'un répondant sur http://127.0.0.1:8000 (LMS) et l'autre sur http://127.0.0.1:8001 (Studio)
 
 
 
@@ -59,7 +60,7 @@ Si vous avez correctement lancé votre machine virtuelle, vous pouvez maintenant
     ######### Commandes exécutées dans la VM
 
     # La plupart des applications sont exécutées par l'utilisateur edxapp
-    sudo su edxapp 
+    sudo su edxapp
 
     # Cette commande réalise à la fois l'installation des dépendances, la
     # collecte des données statiques et le lancement de l'application LMS

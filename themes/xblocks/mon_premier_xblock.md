@@ -11,18 +11,22 @@
     sudo python get-pip.py
 
 ### Télécharger le xblock sdk depuis le dépot Github
-    git clone https://github.com/edx/xblock-sdk.git
 
-### Installer le xblock sdk.
-    cd xblock-sdk
-    sudo make
+    mkdir -p ~/venvs/
+    virtualenv ~/venvs/xblock-sdk
+    source ~/venvs/xblock-sdk/bin/activate
+    cd ~/
+    git clone https://github.com/edx/xblock-sdk.git
+    cd ~/xblock-sdk/
+    make install
     python manage.py syncdb
+
 
 ### Lancer le serveur de développement
 
-    python manage.py runserver 0:8010
+    python manage.py runserver 0:8001
 
-Maintenant depuis votre navigateur allez à cette adresse 127.0.0.1:8010.
+Maintenant depuis votre navigateur allez à cette adresse 127.0.0.1:8001.
 Si tout va bien la page suivante devrait apparaître :
 
 ![](http://opencraft.com/doc/edx/xblock/_images/workbench_home.png "Optional title")

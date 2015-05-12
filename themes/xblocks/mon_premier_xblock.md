@@ -10,7 +10,7 @@
  
     sudo python get-pip.py
 
-### Télécharger le xblock sdk depuis le dépot Github
+### Installer le xblock sdk depuis le dépot Github
 
     mkdir -p ~/venvs/
     virtualenv ~/venvs/xblock-sdk

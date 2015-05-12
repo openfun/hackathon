@@ -1,5 +1,9 @@
 # Mon premier Xblock 'Hello Student!'
 
+- TODO: Introdction + expliquer où faire tourner ce SDK: pas dans la machine virtuelle à coté de Edx, mais dans l'environement host par exemple.
+- TODO: Comment shipper le xblock dans l'appli Edx.
+- TODO: Premiers par pour explorer / developer un xblock.
+
 ### Installer Python
 
     sudo apt-get install python
@@ -12,6 +16,7 @@
 
 ### Installer le xblock sdk depuis le dépot Github
 
+    sudo apt-get install python-virtualenv
     mkdir -p ~/venvs/
     virtualenv ~/venvs/xblock-sdk
     source ~/venvs/xblock-sdk/bin/activate

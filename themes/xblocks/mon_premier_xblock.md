@@ -45,7 +45,8 @@ Si tout va bien la page suivante devrait apparaître :
 
 ### Créons la structure de notre xblock
 
-	# Le code du xblock sera dans le dossier ~/xblock-dev/
+
+        # Le code du xblock sera dans le dossier ~/xblock-dev/
         mkdir ~/xblock-dev/
         cd ~/xblock-dev/
         python ~/xblock-sdk/script/startnew.py 
@@ -57,7 +58,7 @@ Nous avons maitenant un dossier 'hellostudent' contenant la structure du XBlock.
 
 ### Afficher 'Hello student'
 
-Ouvrons le fichier *hellostudent/static/html/hellostudent.html* et remplaçons son contenu par :
+Ouvrons le fichier `hellostudent/static/html/hellostudent.html` et remplaçons son contenu par :
 
 
     <div class="hellostudent_block">
@@ -68,31 +69,13 @@ Ouvrons le fichier *hellostudent/static/html/hellostudent.html* et remplaçons s
 
 ### Enregistrer notre xbock dans le workbench.
 
-Pour afficher notre xblock il est nécessaire de l'installer.
-L'installation se fait à travers le fichier setup.py
+Pour afficher notre xblock il est nécessaire de l'installer. L'installation est controlée par fichier
+`setup.py` qu'il faudra modifier pour l'adapter à nos besoin.
 
-<pre><code>
-	setup(
-    name='hellostudent-xblock',
-    version='0.1',
-    description='Mon premier xblock',
-    packages=[
-        'hellostudent',
-    ],
-    install_requires=[
-        'XBlock',
-    ],
-    entry_points={
-        'xblock.v1': [
-            'hellostudent = hellostudent:HelloStudentXBlock',
-        ]
-    },
-    package_data=package_data("hellostudent", ["static", "public"]),
-	)
-	</code></pre>
-	
-	cd xblock-sdk/hellostudent
-	pip install .
+        # Se mettre dans l'environnement virtuel avant l'installation du paquet.
+        source ~/venvs/xblock-sdk/bin/activate
+        cd ~/xblock-dev/hellostudent/
+        pip install .
 
 ![](https://github.com/openfun/hackathon/blob/jpaille-xblock-doc/themes/static/indexsdk.png?raw=true)
 

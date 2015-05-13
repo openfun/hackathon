@@ -1,8 +1,8 @@
 # Mon premier Xblock 'Hello Student!'
 
-- TODO: Introdction + expliquer où faire tourner ce SDK: pas dans la machine virtuelle à coté de Edx, mais dans l'environement host par exemple.
-- TODO: Comment shipper le xblock dans l'appli Edx.
-- TODO: Premiers par pour explorer / developer un xblock.
+Les XBlocks enrichisse les contenu de cours : il existe des XBlock pour afficher des vidéos dans le cours, pour y insérer des quiz, pour permettre des discussions de forum, ou même pour exécuter des lignes code. Edx met à disposition un SDK qui aide à la création de XBlocks. Ainsi, il est possible commencer le développement de vos modules XBlock sans avoir à installer la platforme Edx.
+
+Vous trouverez dans ce guide, les instructions pour installer le SDK et pour créer votre premier XBlock.
 
 ### Installer Python
 
@@ -76,6 +76,10 @@ Pour afficher notre xblock il est nécessaire de l'installer. L'installation est
         source ~/venvs/xblock-sdk/bin/activate
         cd ~/xblock-dev/hellostudent/
         pip install .
+
+
+ Ici, nous travaillons dans le context du SDK, mais sachez que ce même principe utilisant `pip install` est utilisé pour installer un XBlock dans la plateforme Edx.
+
 
 ![](https://github.com/openfun/hackathon/blob/jpaille-xblock-doc/themes/static/indexsdk.png?raw=true)
 

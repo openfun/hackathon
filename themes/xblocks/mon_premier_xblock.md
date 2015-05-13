@@ -8,11 +8,18 @@
 
     sudo apt-get install python
 
-### Installer Pip (le gestionnaire de dépendance python)
- Télécharger ce script python https://bootstrap.pypa.io/get-pip.py
- Puis l'exécuter avec :
+### Installer Pip
+
+ Pip est un gestionnaire de dépendance python.
  
-    sudo python get-pip.py
+ Pour une installation sous Debian/Ubuntu
+ 
+     sudo apt-get install python-pip
+ 
+ Une autre façon d'installer pip en téléchargeant le script `https://bootstrap.pypa.io/get-pip.py`:
+ 
+    wget https://bootstrap.pypa.io/get-pip.py -P /tmp/ && sudo python /tmp/get-pip.py
+
 
 ### Installer le xblock sdk depuis le dépot Github
 
@@ -36,9 +43,12 @@ Si tout va bien la page suivante devrait apparaître :
 
 ![](http://opencraft.com/doc/edx/xblock/_images/workbench_home.png "Optional title")
 
-### Créons la structure de notre xblock avec la commande suivante:
+### Créons la structure de notre xblock
 
-	python script/startnew.py
+	# Le code du xblock sera dans le dossier ~/xblock-dev/
+        mkdir ~/xblock-dev/
+        cd ~/xblock-dev/
+        python ~/xblock-sdk/script/startnew.py 
 
 Le script demande d'abord un nom court pour notre xblock, choisissons 'hellostudent'.
 Ensuite rentrons le nom de classe 'HelloStudentXBlock'
@@ -49,12 +59,12 @@ Nous avons maitenant un dossier 'hellostudent' contenant la structure du XBlock.
 
 Ouvrons le fichier *hellostudent/static/html/hellostudent.html* et remplaçons son contenu par :
 
-`<div class="hellostudent_block">
-    <p>
-        Hello Student !
-    </p>
-</div>
-`
+
+    <div class="hellostudent_block">
+        <p>
+             Hello Student !
+         </p>
+     </div>
 
 ### Enregistrer notre xbock dans le workbench.
 

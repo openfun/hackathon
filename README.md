@@ -12,19 +12,19 @@ Les apprenants peuvent s'inscrirent, consulter les cours, répondre aux quiz, ac
 
 Lorsque vous installez OpenFUN ou Open edX, vous aurez sur une même machine les deux "sites". L'un répondant sur http://127.0.0.1:8000 (LMS) et l'autre sur http://127.0.0.1:8001 (Studio)
 
-![](https://github.com/openfun/hackathon/blob/add-global-intro/themes/static/moocs.png?raw=true)
+![](https://github.com/openfun/hackathon/blob/add-global-intro/docs/static/moocs.png?raw=true)
 
 Les moocs ne sont pas composés uniquement de vidéos de cours. Ils s'accompagnent aussi de nombreuses activités, jeux ...
 
-![](https://github.com/openfun/hackathon/blob/add-global-intro/themes/static/dragdrop.png?raw=true)
+![](https://github.com/openfun/hackathon/blob/add-global-intro/docs/static/dragdrop.png?raw=true)
 
 Les étudiants suivent des moocs depuis le *LMS* (Learning Management System):
 
-![](https://github.com/openfun/hackathon/blob/add-global-intro/themes/static/lms.png?raw=true)
+![](https://github.com/openfun/hackathon/blob/add-global-intro/docs/static/lms.png?raw=true)
 
 Et les professeurs concoivent ces moocs depuis un *CMS* (Content Management System), appelé aussi *Studio*:
 
-![](https://github.com/openfun/hackathon/blob/add-global-intro/themes/static/cms.png?raw=true)
+![](https://github.com/openfun/hackathon/blob/add-global-intro/docs/static/cms.png?raw=true)
 
 
 ## Premiers pas

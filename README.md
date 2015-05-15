@@ -27,5 +27,5 @@ Et les professeurs concoivent ces moocs depuis un *CMS* (Content Management Syst
 
 ## Références
 
-* Installation de OpenFun / Edx
-* Introduction aux XBlocks
+* [Installation de OpenFun / Edx](/docs/fun-install/)
+* [Introduction aux XBlocks](/docs/xblocks/)

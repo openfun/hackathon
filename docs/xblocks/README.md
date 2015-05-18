@@ -65,7 +65,7 @@ Ouvrons le fichier `hellostudent/static/html/hellostudent.html` et remplaçons s
         <p>
              Hello Student !
          </p>
-     </div>
+    </div>
 
 ### Enregistrer notre xbock dans le workbench.
 

@@ -81,6 +81,6 @@ Pour afficher notre xblock il est nécessaire de l'installer. L'installation est
  Ici, nous travaillons dans le context du SDK, mais sachez que ce même principe utilisant `pip install` est utilisé pour installer un XBlock dans la plateforme Edx.
 
 
-![](https://github.com/openfun/hackathon/blob/jpaille-xblock-doc/themes/static/indexsdk.png?raw=true)
+![](https://github.com/openfun/hackathon/blob/master/docs/static/indexsdk.png?raw=true)
 
-![](https://github.com/openfun/hackathon/blob/jpaille-xblock-doc/themes/static/hellodk1.png?raw=true)
+![](https://github.com/openfun/hackathon/blob/master/docs/static/hellodk1.png?raw=true)

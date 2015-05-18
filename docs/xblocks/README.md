@@ -69,8 +69,7 @@ Ouvrons le fichier `hellostudent/static/html/hellostudent.html` et remplaçons s
 
 ### Enregistrer notre xbock dans le workbench.
 
-Pour afficher notre xblock il est nécessaire de l'installer. L'installation est controlée par fichier
-`setup.py` qu'il faudra modifier pour l'adapter à nos besoin.
+Pour afficher notre xblock il est nécessaire de l'installer dans l'environnement de travail, le 'workbench'. L'installation est controlée par fichier `setup.py` qu'il faudra modifier pour l'adapter à nos besoin.
 
         # Se mettre dans l'environnement virtuel avant l'installation du paquet.
         source ~/venvs/xblock-sdk/bin/activate
@@ -78,8 +77,17 @@ Pour afficher notre xblock il est nécessaire de l'installer. L'installation est
         pip install .
 
 
- Ici, nous travaillons dans le context du SDK, mais sachez que ce même principe utilisant `pip install` est utilisé pour installer un XBlock dans la plateforme Edx.
+Ici, nous travaillons dans le contexte du SDK, mais sachez que ce même principe utilisant `pip install` est utilisé pour installer un XBlock dans la plateforme Edx.
 
+Vous devriez maintenant avoir un environement minial complet. 
+
+Pour rapel, les commandes pour démarer le serveur:
+
+    source ~/venvs/xblock-sdk/bin/activate
+    cd ~/xblock-dev/hellostudent/
+    python manage.py runserver 0:8001
+
+Voici ce que vous devriez voir:
 
 ![](https://github.com/openfun/hackathon/blob/master/docs/static/indexsdk.png?raw=true)
 

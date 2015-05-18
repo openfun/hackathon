@@ -1,2 +1,5 @@
-pdf:
-	pandoc README.md docs/*.md -o static/hackathon.pdf
+all: pdf html
+pdf: html
+	pandoc --table-of-contents -o static/hackathon.pdf README.md
+html:
+	pandoc --table-of-contents -o README.md --to=html docs/*.md

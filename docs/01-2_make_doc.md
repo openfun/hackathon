@@ -1,6 +1,6 @@
 # Comment lire cette documentation ? {#documentation}
 
-La version pdf de cette documentation peut être téléchargée [ici](static/hackathon.pdf).
+La version pdf de cette documentation peut être téléchargée [ici](https://github.com/openfun/hackathon/raw/regisb/pdfdoc/static/hackathon.pdf).
 
 Vous pouvez également générer cette documentation au format html et markdown
 vous-même en clonant le dépôt :

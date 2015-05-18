@@ -89,6 +89,6 @@ Pour rapel, les commandes pour démarer le serveur:
 
 Voici ce que vous devriez voir:
 
-![](https://github.com/openfun/hackathon/blob/master/docs/static/indexsdk.png?raw=true)
+![](static/img/indexsdk.png)
 
-![](https://github.com/openfun/hackathon/blob/master/docs/static/hellodk1.png?raw=true)
+![](static/img/hellodk1.png)

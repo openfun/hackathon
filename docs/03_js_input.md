@@ -1,4 +1,6 @@
-# Introduction
+# JS-Input
+
+## Introduction
 
 Une activité OpenedX peut aller de la simple page HTML, aux quiz et évaluations
 par les pairs. Le JS-Input est une spécificité d'OpenedX permettant d'étendre
@@ -26,11 +28,11 @@ En gros une activité JS-Input c'est : une page HTML avec un peu de Javascript !
 Dans ce document nous allons expliquer comment construire une simple application
 JS-Input assez générique pour que vous compreniez les mécanismes de base.
 
-# Les mécanismes de base
+## Les mécanismes de base
 
 Tout d'abord, voici à quoi ressemble un problème de ce type dans studio:
 
-![Exemple d'activité dans studio](./img/JS-Input-Screencast-example.png)
+![Exemple d'activité dans studio](static/img/js-input/JS-Input-Screencast-example.png)
 
 Les paramètres de l'activité dans studio sont les suivants:
 ```
@@ -53,7 +55,7 @@ On peut en déduire que les étapes clés dans l'instanciation d'une activité J
 - Les actions de vérification du problème coté Open edX: gradefn
 - Les actions de changement  : de note ou d'état get_statefn et gradefn
 
-## Chargement de l'activité et initialisation de l'état
+### Chargement de l'activité et initialisation de l'état
 
 L'activité se charge dans la page de cours et utilise différents modules internes à Open edX.
 
@@ -65,7 +67,7 @@ Nous allons revenir en détail vers ces deux modules dans un autre chapitre.
 
 Pour l'instant occupons nous du processus décrit sur ce schéma:
 
-![Sequence de chargemment](./img/load.png)
+![Sequence de chargemment](static/img/js-input/load.png)
 
 Lorsque la page se charge, Open edX retouve le dernier état de l'application pour un
 utilisateur donné. Cet état se présente sous la forme d'une information codée
@@ -76,7 +78,7 @@ Si aucun ""état" (JSON) pour l'utilisateur n'est trouvé et que l'on a spécifi
 
 
 
-## Vérification du problème coté Open edX
+### Vérification du problème coté Open edX
 
 La routine de vérification d'un problème est activée par l'appui de
 l'utilisateur sur le bouton Vérifier (ou "Check" en Anglais). C'est seulement cette action qui déclenchera la séquence de vérifiction.
@@ -87,13 +89,13 @@ Ce qui se passe:
 * Le script python intégré à l'activité JS-Input dans Open edX est lancé pour vérifier le résultat, et renvoie une information sous forme de note.
 * Le résultat est renvoyé vers le serveur edX
 
-![Sequence de chargemment](./img/get-grade.png)
+![Sequence de chargemment](static/img/js-input/get-grade.png)
 
 Ensuite le résultat est stocké dans la base de donnée Open edX avec des information sur le temps exact de soumission et ce que l'on appelle un 'correct_map' qui permet de stocker le status (correct ou non) de la réponse après analyse par le script python de l'exercice.
 
 Vous pouvez voir l'historique des soumissions grâce au bouton "Historique des soumissions" situé au dessous de l'activité (seulement accessible par l'enseignant).
 
-![Sequence de chargemment](./img/historique_soumission.png)
+![Sequence de chargemment](static/img/js-input/historique_soumission.png)
 
 Cet historique va donner des résultats comme ceux-ci (application d'exemple Javascript):
 ```
@@ -124,7 +126,7 @@ Score: 1.0 / 1.0
 }
 ```
 
-## Mécanismes de retour d'information
+### Mécanismes de retour d'information
 
 Il existe un troisième mécanisme de retour d'information appelé get_statefn.
 Dans la pratique, on peut se baser sur le retour de la note (qui peut donner bien plus qu'un état de note, mais aussi une idée de l'état de l'application).
@@ -140,23 +142,23 @@ Exemple:
 ```
 
 
-# Les modules
+## Les modules
 
-## Custom Response Problem et JS Input Problem
+### Custom Response Problem et JS Input Problem
 Ces deux types de problèmes sont des modules permettant de vérifier la réponse utilisateur par un petit script python avant l'enregistrement réél sur Open edX.
 Ceci permet de faire pas mal de choses notamment de noter de manière plus souple tout en restant automatique.
 
 Documentation ici:
 https://github.com/Stanford-Online/js-input-samples
 
-## JSChannel
+### JSChannel
 
 JSChannel est un wrapper créé par Mozilla pour faciliter la communication entre pages et iframes (voir window.postMessage: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage ).
 La bibliothèque JS Channel facilite ce travail: (https://github.com/mozilla/jschannel)
 
-# Trucs et astuces
+## Trucs et astuces
 
-## Intégrer du JS Input directement de github
+### Intégrer du JS Input directement de github
 
 Lorsque l'on développe une extension, il est assez pratique de pouvoir avoir une version de l'application externe au cours sur un site externe. Sinon on est obligé de recharger les fichiers correspondants à chaque mise à jour.
 
@@ -165,7 +167,7 @@ Pour cela il est pratique d'utiliser le lien provenant directement de gihub sur 
 https://rawgit.com/
 
 
-## Faire une activité qui retourne une note différente de 0 ou 1
+### Faire une activité qui retourne une note différente de 0 ou 1
 
 ```
 <![CDATA[
@@ -196,7 +198,7 @@ def vglcfn(e, ans):
 ```
 
 
-## Liens utiles
+### Liens utiles
 
 
 Documentation de l'activité JS Input:

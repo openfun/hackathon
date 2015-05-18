@@ -1,4 +1,4 @@
-# Installation d'une machine virtuelle OpenFUN / Edx
+# Installation d'une machine virtuelle OpenFUN / Edx{#install}
 
 Les composants nécessaires à l'installation de FUN ou d'edX sont nombreux et relativement complexes ; c'est pourquoi il existe des machines virtuelles (VM) disponibles en simple téléchargement qui permettent de commencer rapidement à tester ces applications. Dans la suite de cette section, nous allons voir les étapes à suivre pour obtenir un environnement de développement fonctionnel.
 

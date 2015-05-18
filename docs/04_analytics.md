@@ -53,7 +53,7 @@ Une fois que vous avez correctement installé Logstash et ElasticSearch, vous
 pouvez insérer les logs de FUN dans ElasticSearch à l'aide du fichier de
 configuration `logstash.conf` fourni dans ce dépôt :
 
-    cat fun_tracking_logs.log | logstash --config hackathon/themes/analytics/logstash.conf
+    cat fun_tracking_logs.log | logstash --config static/logstash.conf
 
 ### Visualisation des résultats dans Kibana
 
@@ -93,4 +93,4 @@ mieux est de :
 
 3. Copier-coller cette requête dans un fichier `query.json`, puis réaliser la requête à l'aide du script fourni dans ce dépôt :
 
-    ```hackathon/themes/analytics/es.py query.json > result.json```
+    ```static/es.py query.json > result.json```

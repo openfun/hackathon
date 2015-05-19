@@ -11,7 +11,7 @@ La documentation peut être générée en local au format pdf :
     sudo apt-get install pandoc texlive texlive-lang-french
     make pdf
 
-Le fichier correspondant peut être téléchargé [ici](https://github.com/openfun/hackathon/raw/regisb/pdfdoc/static/hackathon.pdf).
+Le fichier correspondant peut être téléchargé [ici](https://github.com/openfun/hackathon/raw/master/static/hackathon.pdf).
 
 ## Génération des pages Github
 

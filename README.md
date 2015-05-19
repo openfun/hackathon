@@ -1,6 +1,6 @@
 # Documentation du Hackathon Hac'edX
 
-    http://openfun.github.io/hackathon/
+[http://openfun.github.io/hackathon/](http://openfun.github.io/hackathon/)
 
 ## Génération de la documentation
 
@@ -13,7 +13,7 @@ La documentation peut être générée en local au format pdf :
 
 Le fichier correspondant peut être téléchargé [ici](https://github.com/openfun/hackathon/raw/regisb/pdfdoc/static/hackathon.pdf).
 
-## Génération du site http://openfun.github.io/hackathon/
+## Génération des pages Github
 
 Pour publier une version mise à jour du site, il suffit de mettre à jour la branch gh-pages du dépôt github :
 
@@ -22,3 +22,7 @@ Pour publier une version mise à jour du site, il suffit de mettre à jour la br
 Ou encore :
 
     make publish
+
+En réalité, il suffit de mettre à jour la branche master et
+[Jenkins](http://ci.alt.openfun.fr/job/hackathon-github-pages/) se chargera de
+mettre à jour le site github.

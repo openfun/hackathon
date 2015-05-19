@@ -2,16 +2,27 @@
 <!-- It was generated using the "make markdown" command. Instead, edit the individual docs/*.md files. --> 
 
 <h1 id="hackedx"><a href="#hackedx">Hack'edX</a></h1>
-<h2 id="introduction"><a href="#introduction">Introduction</a></h2>
+<ul>
+<li><a href="#documentation">Comment lire cette documentation ?</a></li>
+<li><a href="#presentation">Présentation générale</a></li>
+<li><a href="#install">Installation de OpenFun / Edx</a></li>
+<li><a href="#xblocks">Introduction aux XBlocks</a></li>
+<li><a href="#js-input">Introduction à JS-Input</a></li>
+<li><a href="#analytics">Faire du big data avec OpenFUN</a></li>
+</ul>
+<h1 id="documentation"><a href="#documentation">Comment lire cette documentation ?</a></h1>
+<p>La version pdf de cette documentation peut être téléchargée <a href="https://github.com/openfun/hackathon/raw/regisb/pdfdoc/static/hackathon.pdf">ici</a>.</p>
+<p>Vous pouvez également générer cette documentation au format html et markdown vous-même en clonant le dépôt :</p>
+<pre><code>git clone https://github.com/openfun/hackathon
+cd hackathon</code></pre>
+<p>Installez les dépendances nécessaires :</p>
+<pre><code>sudo apt-get install texlive pandoc</code></pre>
+<p>Générez la documentation au format markdown et html :</p>
+<pre><code>make</code></pre>
+<h1 id="presentation"><a href="#presentation">Présentation générale</a></h1>
 <p>Edx est une platforme web qui permet de délivrer des cours en ligne ouverts à tous, les MOOCs - Massive Online Open Courses.</p>
 <p>Les cours sont édités dans le « Studio ». Le Studio est une section réservée aux enseignants et aux personnes responsables de maintenir les cours. Il s'agit d'une interface web d'où l'on peut éditer les contenus de cours, gérer les vidéos et les autres ressources à destination des apprenants. Depuis le Studio, on peut gérer les calendriers de cours, gérer les barêmes de notation des apprenants, concevoir les quiz, etc.</p>
 <p>Le LMS - Learning Management System, est la section publique de la plateforme Edx. Les cours qui sont édités dans le Studio sont publiés dans le LMS et disponibles aux apprenants. Le LMS est la partie la plus exposée et permet notamment aux apprenants de se connecter et de suivre leur cours. Il s'agit de https://www.france-universite-numerique-mooc.fr par exemple. Les apprenants peuvent s'inscrirent, consulter les cours, répondre aux quiz, accéder aux résultats, etc.</p>
-<h2 id="références"><a href="#références">Références</a></h2>
-<ul>
-<li><a href="#documentation">Comment lire cette documentation ?</a></li>
-<li><a href="#install">Installation de OpenFun / Edx</a></li>
-<li><a href="#xblocks">Introduction aux XBlocks</a></li>
-</ul>
 <h2 id="lms-et-studio"><a href="#lms-et-studio">LMS et Studio</a></h2>
 <p>Lorsque vous installez OpenFUN ou OpenEdX, vous aurez les deux &quot;sites&quot; LMS et Studio sur votre machine de dévelopement.</p>
 <div class="figure">
@@ -29,15 +40,6 @@
 <div class="figure">
 <img src="static/img/cms.png" />
 </div>
-<h1 id="documentation"><a href="#documentation">Comment lire cette documentation ?</a></h1>
-<p>La version pdf de cette documentation peut être téléchargée <a href="https://github.com/openfun/hackathon/raw/regisb/pdfdoc/static/hackathon.pdf">ici</a>.</p>
-<p>Vous pouvez également générer cette documentation au format html et markdown vous-même en clonant le dépôt :</p>
-<pre><code>git clone https://github.com/openfun/hackathon
-cd hackathon</code></pre>
-<p>Installez les dépendances nécessaires :</p>
-<pre><code>sudo apt-get install texlive pandoc</code></pre>
-<p>Générez la documentation au format markdown et html :</p>
-<pre><code>make</code></pre>
 <h1 id="install"><a href="#install">Installation d'une machine virtuelle OpenFUN / Edx</a></h1>
 <p>Les composants nécessaires à l'installation de FUN ou d'edX sont nombreux et relativement complexes ; c'est pourquoi il existe des machines virtuelles (VM) disponibles en simple téléchargement qui permettent de commencer rapidement à tester ces applications. Dans la suite de cette section, nous allons voir les étapes à suivre pour obtenir un environnement de développement fonctionnel.</p>
 <h3 id="téléchargement"><a href="#téléchargement">Téléchargement</a></h3>
@@ -138,7 +140,7 @@ python manage.py runserver 0:8001</code></pre>
 <img src="static/img/hellodk1.png" />
 </div>
 <h1 id="js-input"><a href="#js-input">JS-Input</a></h1>
-<h2 id="introduction-1"><a href="#introduction-1">Introduction</a></h2>
+<h2 id="introduction"><a href="#introduction">Introduction</a></h2>
 <p>Une activité OpenedX peut aller de la simple page HTML, aux quiz et évaluations par les pairs. Le JS-Input est une spécificité d'OpenedX permettant d'étendre les types d'activités disponibles sur la plateforme.</p>
 <p>Bien qu'OpenedX offre beaucoup de types d'activités différentes aux créateurs de cours, &quot;beaucoup&quot; n'est souvent pas assez pour l'ensemble des acteurs de la plateforme. Pour répondre à la demande des MOOC, ils faut souvent créer de multiple types d'activités afin d'éviter l'aspect répétitif et permettre au cours d'être suivi avec plus d'engouement. Il ne faut pas être limité à un choix toujours trop réduit de types de quiz.</p>
 <p>OpenedX propose de résoudre ce problème en mettant à portée du développeur/concepteur deux technologies: - Le Xblock (voir documentation spécifique): une extension en python qui doit être installée sur le serveur qui héberge la plateforme. C'est probablement la meilleure solution si vous avez accès au serveur. - Le JS-Input: probablement moins flexible en terme de possibilité, mais probablement la réponse à de nombreux besoins. Le JS-Input a l'avantage d'être une extension dont l'installation se fait directement dans un cours sans nécéssiter un accès au serveur.</p>
@@ -259,7 +261,7 @@ def vglcfn(e, ans):
 <p>Custom Python evaluated problem (Version générique du JS Input): http://edx-partner-course-staff.readthedocs.org/en/latest/exercises_tools/custom_python.html</p>
 <p>Stanford JS Input Samples: https://github.com/Stanford-Online/js-input-samples</p>
 <h1 id="analytics"><a href="#analytics">Analytics</a></h1>
-<h2 id="introduction-2"><a href="#introduction-2">Introduction</a></h2>
+<h2 id="introduction-1"><a href="#introduction-1">Introduction</a></h2>
 <p>FUN met à la disposition des participants au hackathon une quantité de logs extraits de ses machines de productions à fins d'analyse.</p>
 <h2 id="téléchargement-des-fichiers-de-logs"><a href="#téléchargement-des-fichiers-de-logs">Téléchargement des fichiers de logs</a></h2>
 <p>TODO</p>
@@ -267,7 +269,7 @@ def vglcfn(e, ans):
 <p>Les logs proviennent des appels à <code>tracker.emit</code> qui parsèment le code d'edX et de FUN : https://github.com/edx/event-tracking/blob/0.2.0/eventtracking/tracker.py#L65</p>
 <p>Chaque évènement loggé se présente sous la forme d'un blob JSON contenant au moins un champ <code>time</code>.</p>
 <h2 id="format-des-logs"><a href="#format-des-logs">Format des logs</a></h2>
-<p>Les logs fournis par FUN sont anonymisés, ce qui signifie que les champs <code>email</code>, <code>address</code>, etc. ont été retirés des blobs JSON. Par ailleurs, le champs <code>username</code> a été chiffré à l'aide d'une méthode chiffrage à sens unique :</p>
+<p>Les logs fournis par FUN sont anonymisés, ce qui signifie que les champs <code>email</code>, <code>address</code>, etc. ont été retirés des blobs JSON. Par ailleurs, le champs <code>username</code> a été chiffré à l'aide d'une méthode de chiffrage à sens unique :</p>
 <pre><code>encrypted_username = hmac.new(secret_key, username, hashlib.sha256).hexdigest()</code></pre>
 <h2 id="analyse-des-logs-à-laide-de-elasticsearch"><a href="#analyse-des-logs-à-laide-de-elasticsearch">Analyse des logs à l'aide de ElasticSearch</a></h2>
 <p>Les logs fournis par FUN se prêtent particulièrement bien à l'analyse via ElasticSearch. Si vous décidez de charger les logs fournis dans un cluster ElasticSearch, nous vous recommandons d'installer la pile ELK : ElasticSearch + Logstash + Kibana.</p>

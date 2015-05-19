@@ -1,4 +1,4 @@
-# JS-Input
+# JS-Input {#js-input}
 
 ## Introduction
 

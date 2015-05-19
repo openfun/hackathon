@@ -1,4 +1,4 @@
-# Analytics
+# Analytics {#analytics}
 
 ## Introduction
 
@@ -23,8 +23,7 @@ moins un champ `time`.
 
 Les logs fournis par FUN sont anonymisés, ce qui signifie que les champs
 `email`, `address`, etc. ont été retirés des blobs JSON. Par ailleurs, le
-champs `username` a été chiffré à l'aide d'une méthode chiffrage à sens unique
-:
+champs `username` a été chiffré à l'aide d'une méthode de chiffrage à sens unique :
 
     encrypted_username = hmac.new(secret_key, username, hashlib.sha256).hexdigest()
 

@@ -30,7 +30,7 @@
 <img src="static/img/cms.png" />
 </div>
 <h1 id="documentation"><a href="#documentation">Comment lire cette documentation ?</a></h1>
-<p>La version pdf de cette documentation peut être téléchargée <a href="static/hackathon.pdf">ici</a>.</p>
+<p>La version pdf de cette documentation peut être téléchargée <a href="https://github.com/openfun/hackathon/raw/regisb/pdfdoc/static/hackathon.pdf">ici</a>.</p>
 <p>Vous pouvez également générer cette documentation au format html et markdown vous-même en clonant le dépôt :</p>
 <pre><code>git clone https://github.com/openfun/hackathon
 cd hackathon</code></pre>

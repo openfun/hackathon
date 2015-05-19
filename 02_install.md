@@ -1,4 +1,9 @@
-# Installation d'une machine virtuelle OpenFUN / Edx{#install}
+---
+title: Installation d'une machine virtuelle OpenFUN / Edx
+layout: default
+---
+
+# Installation d'une machine virtuelle OpenFUN / Edx {#install}
 
 Les composants nécessaires à l'installation de FUN ou d'edX sont nombreux et
 relativement complexes ; c'est pourquoi il existe des machines virtuelles (VM)
@@ -14,7 +19,7 @@ vous devrez télécharger les VM en HTTP, ce qui risque d'être plus lent et de
 saturer les serveurs de FUN.
 
 Les fichiers .torrent correspondant aux différentes version d'OpenFUN sont
-disponibles ici : http://files.alt.openfun.fr/vagrant-images/fun/
+disponibles ici : [http://files.alt.openfun.fr/vagrant-images/fun/](http://files.alt.openfun.fr/vagrant-images/fun/)
 
 Vous pouvez télécharger le fichier openfun-\*.torrent correspondant à la
 version la plus récente d'OpenFUN dans votre client bittorrent favori.
@@ -53,7 +58,7 @@ Si vous avez correctement lancé votre machine virtuelle, vous pouvez maintenant
     fun lms.dev run
 
 Ouvrez maintenant votre navigateur (de votre machine hôte) à l'adresse
-http://127.0.0.1:8000 : vous devriez voir apparaître la page d'accueil de FUN.
+[http://127.0.0.1:8000](http://127.0.0.1:8000) : vous devriez voir apparaître la page d'accueil de FUN.
 Win!
 
     # Pour sauter les phases de vérification de l'environnement, vous pouvez
@@ -72,5 +77,4 @@ Vous pouvez également lancer les tests associés à FUN :
 
 Sous le capot, 'fun' est un raccourci permettant d'exécuter une variété de
 commandes. Pour plus d'informations, consultez la documentation de fun-cmd :
-https://github.com/openfun/fun-cmd
-
+[https://github.com/openfun/fun-cmd](https://github.com/openfun/fun-cmd)

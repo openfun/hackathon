@@ -1,4 +1,9 @@
-# Mon premier Xblock 'Hello Student!'{#xblocks}
+---
+title: XBlocks
+layout: default
+---
+
+# Mon premier Xblock 'Hello Student!' {#xblocks}
 
 Les XBlocks enrichissent les contenu de cours : il existe des XBlock pour afficher des vidéos dans le cours, pour y insérer des quiz, pour permettre des discussions de forum, ou même pour exécuter des lignes code. Edx met à disposition un SDK qui aide à la création de XBlocks. Ainsi, il est possible commencer le développement de vos modules XBlock sans avoir à installer la platforme Edx.
 

@@ -1,5 +1,7 @@
-all: pdf html
-pdf: html
-	pandoc -V lang=french --table-of-contents -o static/hackathon.pdf --from=html README.md
-html:
-	pandoc -V lang=french  --table-of-contents -o README.md --to=html 0*.md
+all: pdf
+pdf:
+	pandoc -V lang=french --table-of-contents -o static/hackathon.pdf 0*.md
+publish:
+	git push origin master:gh-pages
+publish-force:
+	git push --force origin master:gh-pages

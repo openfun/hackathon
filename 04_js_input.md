@@ -1,3 +1,8 @@
+---
+title: JS-Input
+layout: default
+---
+
 # JS-Input {#js-input}
 
 ## Introduction

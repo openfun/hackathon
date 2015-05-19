@@ -1,3 +1,8 @@
+---
+title: Analytics
+layout: default
+---
+
 # Analytics {#analytics}
 
 ## Introduction

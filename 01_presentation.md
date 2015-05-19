@@ -1,3 +1,8 @@
+---
+title: Présentation générale
+layout: default
+---
+
 # Présentation générale {#presentation}
 
 Edx est une platforme web qui permet de délivrer des cours en ligne ouverts à tous, les MOOCs - Massive Online Open Courses.

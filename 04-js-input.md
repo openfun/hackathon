@@ -42,20 +42,18 @@ Tout d'abord, voici à quoi ressemble un problème de ce type dans studio:
 
 Les paramètres de l'activité dans studio sont les suivants:
 
-<pre>
-<problem>
-       <script type="loncapa/python">
-def all_true(exp, ans): return ans == "hi"
-       </script>
-       <customresponse cfn="all_true">
-           <jsinput gradefn="gradefn"
-               height="500"
-               get_statefn="getstate"
-               set_statefn="setstate"
-               html_file="/static/jsinput.html"/>
-       </customresponse>
-</problem>
-</pre>
+    <problem>
+           <script type="loncapa/python">
+    def all_true(exp, ans): return ans == "hi"
+           </script>
+           <customresponse cfn="all_true">
+               <jsinput gradefn="gradefn"
+                   height="500"
+                   get_statefn="getstate"
+                   set_statefn="setstate"
+                   html_file="/static/jsinput.html"/>
+           </customresponse>
+    </problem>
 
 On peut en déduire que les étapes clés dans l'instanciation d'une activité JS-Input sont :
 
@@ -111,33 +109,31 @@ Vous pouvez voir l'historique des soumissions grâce au bouton "Historique des s
 
 Cet historique va donner des résultats comme ceux-ci (application d'exemple Javascript) :
 
-<pre>
-#4: 2015-05-11 20:46:34+00:00 (Europe/Paris time)
+    #4: 2015-05-11 20:46:34+00:00 (Europe/Paris time)
 
-Score: 1.0 / 1.0
-{
-  "attempts": 1,
-  "correct_map": {
-    "i4x-FUN-FUN101-problem-2d1cf6dd9012475ebf3d6295ccb1da72_2_1": {
-      "correctness": "correct",
-      "hint": "",
-      "hintmode": null,
-      "msg": "",
-      "npoints": 1,
-      "queuestate": null
+    Score: 1.0 / 1.0
+    {
+      "attempts": 1,
+      "correct_map": {
+        "i4x-FUN-FUN101-problem-2d1cf6dd9012475ebf3d6295ccb1da72_2_1": {
+          "correctness": "correct",
+          "hint": "",
+          "hintmode": null,
+          "msg": "",
+          "npoints": 1,
+          "queuestate": null
+        }
+      },
+      "done": true,
+      "input_state": {
+        "i4x-FUN-FUN101-problem-2d1cf6dd9012475ebf3d6295ccb1da72_2_1": {}
+      },
+      "last_submission_time": "2015-05-11T20:46:34Z",
+      "seed": 1,
+      "student_answers": {
+        "i4x-FUN-FUN101-problem-2d1cf6dd9012475ebf3d6295ccb1da72_2_1": "{\"answer\":\"{\\\"cylinder\\\":true,\\\"cube\\\":false}\",\"state\":\"{\\\"selectedObjects\\\":{\\\"cylinder\\\":true,\\\"cube\\\":false}}\"}"
+      }
     }
-  },
-  "done": true,
-  "input_state": {
-    "i4x-FUN-FUN101-problem-2d1cf6dd9012475ebf3d6295ccb1da72_2_1": {}
-  },
-  "last_submission_time": "2015-05-11T20:46:34Z",
-  "seed": 1,
-  "student_answers": {
-    "i4x-FUN-FUN101-problem-2d1cf6dd9012475ebf3d6295ccb1da72_2_1": "{\"answer\":\"{\\\"cylinder\\\":true,\\\"cube\\\":false}\",\"state\":\"{\\\"selectedObjects\\\":{\\\"cylinder\\\":true,\\\"cube\\\":false}}\"}"
-  }
-}
-</pre>
 
 ### Mécanismes de retour d'information
 
@@ -147,12 +143,10 @@ Dans ce cas, on va pouvoir définir une fonction de l'application qui est appel�
 
 Exemple:
 
-<pre>
-{  
-   "answer":"{"cylinder":true,"cube":false}",
-   "state":"{"selectedObjects":{"cylinder":true,"cube":false}}"
-}
-</pre>
+    {  
+       "answer":"{"cylinder":true,"cube":false}",
+       "state":"{"selectedObjects":{"cylinder":true,"cube":false}}"
+    }
 
 
 ## Les modules
@@ -180,33 +174,33 @@ Pour cela il est pratique d'utiliser le lien provenant directement de gihub sur 
 
 ### Faire une activité qui retourne une note différente de 0 ou 1
 
-<pre>
+{% highlight python %}
 <![CDATA[
 import json
 def vglcfn(e, ans):
-	par = json.loads(ans)
-  	state = json.loads(par["state"])
- 	selectedObjects = state["selectedObjects"]
-	grade = 0.0
-	ok = False
-	message = 'Essayez encore'
+    par = json.loads(ans)
+    state = json.loads(par["state"])
+    selectedObjects = state["selectedObjects"]
+    grade = 0.0
+    ok = False
+    message = 'Essayez encore'
 
-	if selectedObjects["cylinder"] and selectedObjects["cube"]:
-		grade = 0.5
-		ok=True
-		message = 'Presque ça!'
-	if selectedObjects["cylinder"] and not selectedObjects["cube"]:
-		grade = 1
-		ok=True
-		message = 'Yesss !'
+    if selectedObjects["cylinder"] and selectedObjects["cube"]:
+        grade = 0.5
+        ok=True
+        message = 'Presque ça!'
+    if selectedObjects["cylinder"] and not selectedObjects["cube"]:
+        grade = 1
+        ok=True
+        message = 'Yesss !'
 
-	return {
-		'input_list': [
-			{ 'ok': ok, 'msg': message, 'grade_decimal':grade},
-		]
-	}
+    return {
+        'input_list': [
+            { 'ok': ok, 'msg': message, 'grade_decimal':grade},
+        ]
+    }
 ]]>
-</pre>
+{% endhighlight %}
 
 
 ### Liens utiles

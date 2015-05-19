@@ -1,4 +1,4 @@
-# Documentation du Hackathon Hac'edX
+# Documentation du Hackathon Hack'edX
 
 [http://openfun.github.io/hackathon/](http://openfun.github.io/hackathon/)
 

@@ -81,7 +81,7 @@ Ici, nous travaillons dans le contexte du SDK, mais sachez que ce même principe
 
 Vous devriez maintenant avoir un environement minial complet. 
 
-Pour rapel, les commandes pour démarer le serveur:
+Pour rappel, les commandes pour démarrer le serveur:
 
     source ~/venvs/xblock-sdk/bin/activate
     cd ~/xblock-dev/hellostudent/

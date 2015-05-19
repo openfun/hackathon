@@ -1,6 +1,10 @@
 # Installation d'une machine virtuelle OpenFUN / Edx{#install}
 
-Les composants nécessaires à l'installation de FUN ou d'edX sont nombreux et relativement complexes ; c'est pourquoi il existe des machines virtuelles (VM) disponibles en simple téléchargement qui permettent de commencer rapidement à tester ces applications. Dans la suite de cette section, nous allons voir les étapes à suivre pour obtenir un environnement de développement fonctionnel.
+Les composants nécessaires à l'installation de FUN ou d'edX sont nombreux et
+relativement complexes ; c'est pourquoi il existe des machines virtuelles (VM)
+disponibles en simple téléchargement qui permettent de commencer rapidement à
+tester ces applications. Dans la suite de cette section, nous allons voir les
+étapes à suivre pour obtenir un environnement de développement fonctionnel.
 
 ### Téléchargement
 
@@ -46,7 +50,7 @@ Si vous avez correctement lancé votre machine virtuelle, vous pouvez maintenant
 
     # Cette commande réalise à la fois l'installation des dépendances, la
     # collecte des données statiques et le lancement de l'application LMS
-    fun lms.dev
+    fun lms.dev run
 
 Ouvrez maintenant votre navigateur (de votre machine hôte) à l'adresse
 http://127.0.0.1:8000 : vous devriez voir apparaître la page d'accueil de FUN.
@@ -54,17 +58,17 @@ Win!
 
     # Pour sauter les phases de vérification de l'environnement, vous pouvez
     # exécuter à la place de la commande précédente :
-    fun lms.dev --fast
+    fun lms.dev run --fast
 
     # De même, dans un autre terminal, vous pouvez lancer le Studio/CMS :
-    fun cms.dev --fast
+    fun cms.dev run --fast
 
 Le Studio/CMS est alors visible à l'adresse http://127.0.0.1:8001.
 
 Vous pouvez également lancer les tests associés à FUN :
 
     # Notez que les settings de test sont différents de ceux de dev
-    fun lms.test ../fun-apps/
+    fun lms.test test ../fun-apps/
 
 Sous le capot, 'fun' est un raccourci permettant d'exécuter une variété de
 commandes. Pour plus d'informations, consultez la documentation de fun-cmd :

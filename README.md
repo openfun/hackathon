@@ -12,23 +12,23 @@
 </ul>
 <h1 id="documentation"><a href="#documentation">Comment lire cette documentation ?</a></h1>
 <p>La version pdf de cette documentation peut être téléchargée <a href="https://github.com/openfun/hackathon/raw/regisb/pdfdoc/static/hackathon.pdf">ici</a>.</p>
-<p>Vous pouvez également générer cette documentation au format html et markdown vous-même en clonant le dépôt :</p>
+<p>Vous pouvez également générer vous-même cette documentation au format html et markdown en clonant le dépôt :</p>
 <pre><code>git clone https://github.com/openfun/hackathon
 cd hackathon</code></pre>
 <p>Installez les dépendances nécessaires :</p>
-<pre><code>sudo apt-get install texlive pandoc</code></pre>
+<pre><code>sudo apt-get install pandoc texlive texlive-lang-french</code></pre>
 <p>Générez la documentation au format markdown et html :</p>
 <pre><code>make</code></pre>
 <h1 id="presentation"><a href="#presentation">Présentation générale</a></h1>
 <p>Edx est une platforme web qui permet de délivrer des cours en ligne ouverts à tous, les MOOCs - Massive Online Open Courses.</p>
 <p>Les cours sont édités dans le « Studio ». Le Studio est une section réservée aux enseignants et aux personnes responsables de maintenir les cours. Il s'agit d'une interface web d'où l'on peut éditer les contenus de cours, gérer les vidéos et les autres ressources à destination des apprenants. Depuis le Studio, on peut gérer les calendriers de cours, gérer les barêmes de notation des apprenants, concevoir les quiz, etc.</p>
-<p>Le LMS - Learning Management System, est la section publique de la plateforme Edx. Les cours qui sont édités dans le Studio sont publiés dans le LMS et disponibles aux apprenants. Le LMS est la partie la plus exposée et permet notamment aux apprenants de se connecter et de suivre leur cours. Il s'agit de https://www.france-universite-numerique-mooc.fr par exemple. Les apprenants peuvent s'inscrirent, consulter les cours, répondre aux quiz, accéder aux résultats, etc.</p>
+<p>Le LMS (Learning Management System), est la section publique de la plateforme Edx. Les cours qui sont édités dans le Studio sont publiés dans le LMS et disponibles aux apprenants. Le LMS est la partie la plus exposée et permet notamment aux apprenants de se connecter et de suivre leur cours. Il s'agit de https://www.france-universite-numerique-mooc.fr par exemple. Les apprenants peuvent s'inscrirent, consulter les cours, répondre aux quiz, accéder aux résultats, etc.</p>
 <h2 id="lms-et-studio"><a href="#lms-et-studio">LMS et Studio</a></h2>
-<p>Lorsque vous installez OpenFUN ou OpenEdX, vous aurez les deux &quot;sites&quot; LMS et Studio sur votre machine de dévelopement.</p>
+<p>Lorsque vous installez OpenFUN ou Open edX, vous aurez les deux &quot;sites&quot; LMS et Studio sur votre machine de dévelopement.</p>
 <div class="figure">
 <img src="static/img/moocs.png" />
 </div>
-<p>Les moocs ne sont pas composés uniquement de vidéos de cours. Ils s'accompagnent aussi de nombreuses activités, jeux ...</p>
+<p>Les moocs ne sont pas composés uniquement de vidéos de cours. Ils s'accompagnent aussi de nombreuses activités, jeux...</p>
 <div class="figure">
 <img src="static/img/dragdrop.png" />
 </div>
@@ -66,21 +66,21 @@ sudo su edxapp
 
 # Cette commande réalise à la fois l&#39;installation des dépendances, la
 # collecte des données statiques et le lancement de l&#39;application LMS
-fun lms.dev</code></pre>
+fun lms.dev run</code></pre>
 <p>Ouvrez maintenant votre navigateur (de votre machine hôte) à l'adresse http://127.0.0.1:8000 : vous devriez voir apparaître la page d'accueil de FUN. Win!</p>
 <pre><code># Pour sauter les phases de vérification de l&#39;environnement, vous pouvez
 # exécuter à la place de la commande précédente :
-fun lms.dev --fast
+fun lms.dev run --fast
 
 # De même, dans un autre terminal, vous pouvez lancer le Studio/CMS :
-fun cms.dev --fast</code></pre>
+fun cms.dev run --fast</code></pre>
 <p>Le Studio/CMS est alors visible à l'adresse http://127.0.0.1:8001.</p>
 <p>Vous pouvez également lancer les tests associés à FUN :</p>
 <pre><code># Notez que les settings de test sont différents de ceux de dev
-fun lms.test ../fun-apps/</code></pre>
+fun lms.test test ../fun-apps/</code></pre>
 <p>Sous le capot, 'fun' est un raccourci permettant d'exécuter une variété de commandes. Pour plus d'informations, consultez la documentation de fun-cmd : https://github.com/openfun/fun-cmd</p>
 <h1 id="xblocks"><a href="#xblocks">Mon premier Xblock 'Hello Student!'</a></h1>
-<p>Les XBlocks enrichisse les contenu de cours : il existe des XBlock pour afficher des vidéos dans le cours, pour y insérer des quiz, pour permettre des discussions de forum, ou même pour exécuter des lignes code. Edx met à disposition un SDK qui aide à la création de XBlocks. Ainsi, il est possible commencer le développement de vos modules XBlock sans avoir à installer la platforme Edx.</p>
+<p>Les XBlocks enrichissent les contenu de cours : il existe des XBlock pour afficher des vidéos dans le cours, pour y insérer des quiz, pour permettre des discussions de forum, ou même pour exécuter des lignes code. Edx met à disposition un SDK qui aide à la création de XBlocks. Ainsi, il est possible commencer le développement de vos modules XBlock sans avoir à installer la platforme Edx.</p>
 <p>Vous trouverez dans ce guide, les instructions pour installer le SDK et pour créer votre premier XBlock.</p>
 <h3 id="installer-python"><a href="#installer-python">Installer Python</a></h3>
 <pre><code>sudo apt-get install python</code></pre>
@@ -91,26 +91,28 @@ fun lms.test ../fun-apps/</code></pre>
 <p>Une autre façon d'installer pip en téléchargeant le script <code>https://bootstrap.pypa.io/get-pip.py</code>:</p>
 <pre><code>wget https://bootstrap.pypa.io/get-pip.py -P /tmp/ &amp;&amp; sudo python /tmp/get-pip.py</code></pre>
 <h3 id="installer-le-xblock-sdk-depuis-le-dépot-github"><a href="#installer-le-xblock-sdk-depuis-le-dépot-github">Installer le xblock sdk depuis le dépot Github</a></h3>
+<p>Création de l'environnement virtuel :</p>
 <pre><code>sudo apt-get install python-virtualenv
 mkdir -p ~/venvs/
 virtualenv ~/venvs/xblock-sdk
-source ~/venvs/xblock-sdk/bin/activate
-cd ~/
+source ~/venvs/xblock-sdk/bin/activate</code></pre>
+<p>Installation du xblock sdk :</p>
+<pre><code>cd ~/
 git clone https://github.com/edx/xblock-sdk.git
 cd ~/xblock-sdk/
 make install
 python manage.py syncdb</code></pre>
 <h3 id="lancer-le-serveur-de-développement"><a href="#lancer-le-serveur-de-développement">Lancer le serveur de développement</a></h3>
-<pre><code>python manage.py runserver 0:8001</code></pre>
+<pre><code>python manage.py runserver 0.0.0.0:8001</code></pre>
 <p>Maintenant depuis votre navigateur allez à cette adresse 127.0.0.1:8001. Si tout va bien la page suivante devrait apparaître :</p>
 <div class="figure">
 <img src="http://opencraft.com/doc/edx/xblock/_images/workbench_home.png" title="Optional title" />
 </div>
 <h3 id="créons-la-structure-de-notre-xblock"><a href="#créons-la-structure-de-notre-xblock">Créons la structure de notre xblock</a></h3>
-<pre><code>    # Le code du xblock sera dans le dossier ~/xblock-dev/
-    mkdir ~/xblock-dev/
-    cd ~/xblock-dev/
-    python ~/xblock-sdk/script/startnew.py </code></pre>
+<pre><code># Le code du xblock sera dans le dossier ~/xblock-dev/
+mkdir ~/xblock-dev/
+cd ~/xblock-dev/
+python ~/xblock-sdk/script/startnew.py </code></pre>
 <p>Le script demande d'abord un nom court pour notre xblock, choisissons 'hellostudent'. Ensuite rentrons le nom de classe 'HelloStudentXBlock'</p>
 <p>Nous avons maitenant un dossier 'hellostudent' contenant la structure du XBlock.</p>
 <h3 id="afficher-hello-student"><a href="#afficher-hello-student">Afficher 'Hello student'</a></h3>
@@ -121,17 +123,17 @@ python manage.py syncdb</code></pre>
      &lt;/p&gt;
 &lt;/div&gt;</code></pre>
 <h3 id="enregistrer-notre-xbock-dans-le-workbench."><a href="#enregistrer-notre-xbock-dans-le-workbench.">Enregistrer notre xbock dans le workbench.</a></h3>
-<p>Pour afficher notre xblock il est nécessaire de l'installer dans l'environnement de travail, le 'workbench'. L'installation est controlée par fichier <code>setup.py</code> qu'il faudra modifier pour l'adapter à nos besoin.</p>
-<pre><code>    # Se mettre dans l&#39;environnement virtuel avant l&#39;installation du paquet.
-    source ~/venvs/xblock-sdk/bin/activate
-    cd ~/xblock-dev/hellostudent/
-    pip install .</code></pre>
+<p>Pour afficher notre xblock il est nécessaire de l'installer dans l'environnement de travail, le 'workbench'. L'installation est contrôlée par le fichier <code>setup.py</code> qu'il faudra modifier pour l'adapter à nos besoins.</p>
+<pre><code># Se mettre dans l&#39;environnement virtuel avant l&#39;installation du paquet.
+source ~/venvs/xblock-sdk/bin/activate
+cd ~/xblock-dev/hellostudent/
+pip install -e .</code></pre>
 <p>Ici, nous travaillons dans le contexte du SDK, mais sachez que ce même principe utilisant <code>pip install</code> est utilisé pour installer un XBlock dans la plateforme Edx.</p>
-<p>Vous devriez maintenant avoir un environement minial complet.</p>
-<p>Pour rapel, les commandes pour démarer le serveur:</p>
+<p>Vous devriez maintenant avoir un environnement minimal complet.</p>
+<p>Pour rappel, les commandes pour démarrer le serveur :</p>
 <pre><code>source ~/venvs/xblock-sdk/bin/activate
 cd ~/xblock-dev/hellostudent/
-python manage.py runserver 0:8001</code></pre>
+python manage.py runserver 0.0.0.0:8001</code></pre>
 <p>Voici ce que vous devriez voir:</p>
 <div class="figure">
 <img src="static/img/indexsdk.png" />
@@ -139,13 +141,21 @@ python manage.py runserver 0:8001</code></pre>
 <div class="figure">
 <img src="static/img/hellodk1.png" />
 </div>
+<h3 id="liens-utiles"><a href="#liens-utiles">Liens utiles:</a></h3>
+<p>La documentation officielle mais en cours de construction. http://xblock.readthedocs.org/en/latest/</p>
+<p>Un tutoriel pour lire et enregistrer des vidéos depuis un xblock. http://opencraft.com/doc/edx/xblock/tutorial.html</p>
+<p>Une liste des xblocks déjà existants. https://github.com/edx/edx-platform/wiki/List-of-XBlocks</p>
 <h1 id="js-input"><a href="#js-input">JS-Input</a></h1>
 <h2 id="introduction"><a href="#introduction">Introduction</a></h2>
-<p>Une activité OpenedX peut aller de la simple page HTML, aux quiz et évaluations par les pairs. Le JS-Input est une spécificité d'OpenedX permettant d'étendre les types d'activités disponibles sur la plateforme.</p>
-<p>Bien qu'OpenedX offre beaucoup de types d'activités différentes aux créateurs de cours, &quot;beaucoup&quot; n'est souvent pas assez pour l'ensemble des acteurs de la plateforme. Pour répondre à la demande des MOOC, ils faut souvent créer de multiple types d'activités afin d'éviter l'aspect répétitif et permettre au cours d'être suivi avec plus d'engouement. Il ne faut pas être limité à un choix toujours trop réduit de types de quiz.</p>
-<p>OpenedX propose de résoudre ce problème en mettant à portée du développeur/concepteur deux technologies: - Le Xblock (voir documentation spécifique): une extension en python qui doit être installée sur le serveur qui héberge la plateforme. C'est probablement la meilleure solution si vous avez accès au serveur. - Le JS-Input: probablement moins flexible en terme de possibilité, mais probablement la réponse à de nombreux besoins. Le JS-Input a l'avantage d'être une extension dont l'installation se fait directement dans un cours sans nécéssiter un accès au serveur.</p>
+<p>Une activité Open edX peut aller de la simple page HTML aux quiz et évaluations par les pairs. Le JS-Input est une spécificité d'OpenedX permettant d'étendre les types d'activités disponibles sur la plateforme.</p>
+<p>Bien qu'Open edX offre beaucoup de types d'activités différentes aux créateurs de cours, &quot;beaucoup&quot; n'est souvent pas assez pour l'ensemble des acteurs de la plateforme. Pour répondre à la demande des MOOC, il faut souvent créer de multiple types d'activités afin d'éviter l'aspect répétitif et permettre au cours d'être suivi avec plus d'engouement. Il ne faut pas être limité à un choix toujours trop réduit de types de quiz.</p>
+<p>Open edX propose de résoudre ce problème en mettant à portée du développeur/concepteur deux technologies:</p>
+<ul>
+<li>Le <a href="#xblocks">Xblock</a> (voir documentation spécifique): une extension en python qui doit être installée sur le serveur qui héberge la plateforme. C'est probablement la meilleure solution si vous avez accès au serveur.</li>
+<li>Le JS-Input: probablement moins flexible en terme de possibilités offertes, mais probablement la réponse à de nombreux besoins. Le JS-Input a l'avantage d'être une extension dont l'installation se fait directement dans un cours sans nécéssiter un accès au serveur.</li>
+</ul>
 <p>En gros une activité JS-Input c'est : une page HTML avec un peu de Javascript !</p>
-<p>Dans ce document nous allons expliquer comment construire une simple application JS-Input assez générique pour que vous compreniez les mécanismes de base.</p>
+<p>Dans ce document nous allons expliquer comment construire une simple application JS-Input assez générique pour comprendre les mécanismes de base.</p>
 <h2 id="les-mécanismes-de-base"><a href="#les-mécanismes-de-base">Les mécanismes de base</a></h2>
 <p>Tout d'abord, voici à quoi ressemble un problème de ce type dans studio:</p>
 <div class="figure">
@@ -164,28 +174,43 @@ def all_true(exp, ans): return ans == &quot;hi&quot;
                html_file=&quot;/static/jsinput.html&quot;/&gt;
        &lt;/customresponse&gt;
 &lt;/problem&gt;</code></pre>
-<p>On peut en déduire que les étapes clés dans l'instanciation d'une activité JS-Input sont: - Le chargement de l'activité et restauration de l'état intial: set_statefn - Les actions de vérification du problème coté Open edX: gradefn - Les actions de changement : de note ou d'état get_statefn et gradefn</p>
+<p>On peut en déduire que les étapes clés dans l'instanciation d'une activité JS-Input sont :</p>
+<ul>
+<li>Le chargement de l'activité et restauration de l'état intial: <code>set_statefn</code></li>
+<li>Les actions de vérification du problème côté Open edX: <code>gradefn</code></li>
+<li>Les actions de changement : de note ou d'état <code>get_statefn</code> et <code>gradefn</code></li>
+</ul>
 <h3 id="chargement-de-lactivité-et-initialisation-de-létat"><a href="#chargement-de-lactivité-et-initialisation-de-létat">Chargement de l'activité et initialisation de l'état</a></h3>
 <p>L'activité se charge dans la page de cours et utilise différents modules internes à Open edX.</p>
 <p>Le module principal est &quot;Custom Response Problem&quot; qui est le module générique dans Open edX, permettant d'évaluer une réponse de manière programmatique. L'autre module est appelé JSChannel et permet à l'application JS-Input de communiquer avec Open edX. Nous allons revenir en détail vers ces deux modules dans un autre chapitre.</p>
-<p>Pour l'instant occupons nous du processus décrit sur ce schéma:</p>
+<p>Pour l'instant occupons-nous du processus décrit sur ce schéma:</p>
 <div class="figure">
-<img src="static/img/js-input/load.png" alt="Sequence de chargemment" /><p class="caption">Sequence de chargemment</p>
+<img src="static/img/js-input/load.png" />
 </div>
-<p>Lorsque la page se charge, Open edX retouve le dernier état de l'application pour un utilisateur donné. Cet état se présente sous la forme d'une information codée en JSON. Le format de cette information est particulière à l'application JS-Input (seule elle la comprend en réalité). Sa signification est définie par le créateur de l'activité.</p>
-<p>Si aucun &quot;&quot;état&quot; (JSON) pour l'utilisateur n'est trouvé et que l'on a spécifié un état initial, celui-ci est chargé et présenté à l'application JS-Input par un appel à la fonction &quot;setState&quot;.</p>
+<p>Lorsque la page se charge, Open edX retrouve le dernier état de l'application pour un utilisateur donné. Cet état se présente sous la forme d'une information codée en JSON. Le format de cette information est particulière à l'application JS-Input (seule elle la comprend en réalité). Sa signification est définie par le créateur de l'activité.</p>
+<p>Si aucun &quot;état&quot; (JSON) pour l'utilisateur n'est trouvé et que l'on a spécifié un état initial, celui-ci est chargé et présenté à l'application JS-Input par un appel à la fonction &quot;setState&quot;.</p>
 <h3 id="vérification-du-problème-coté-open-edx"><a href="#vérification-du-problème-coté-open-edx">Vérification du problème coté Open edX</a></h3>
-<p>La routine de vérification d'un problème est activée par l'appui de l'utilisateur sur le bouton Vérifier (ou &quot;Check&quot; en Anglais). C'est seulement cette action qui déclenchera la séquence de vérifiction.</p>
-<p>Ce qui se passe: * Le conteneur JS Input Problem envoie un &quot;Get grade&quot; pour récupérer une l'information d'état de l'activité encodée en JSON. Il appellera aussi la fonction &quot;Get State&quot; si elle existe pour stocker l'état actuel de l'utilisateur. * L'information passe à travers toutes les couches logicielles (JSChannel, JS Input Problem) et vers edX * Le script python intégré à l'activité JS-Input dans Open edX est lancé pour vérifier le résultat, et renvoie une information sous forme de note. * Le résultat est renvoyé vers le serveur edX</p>
+<p>La routine de vérification d'un problème est activée par l'appui de l'utilisateur sur le bouton &quot;Vérifier&quot; (ou &quot;Check&quot; en Anglais). C'est seulement cette action qui déclenchera la séquence de vérification.</p>
+<p>Ce qui se passe:</p>
+<ul>
+<li>Le conteneur JS Input Problem envoie un &quot;Get grade&quot; pour récupérer une l'information d'état de l'activité encodée en JSON. Il appellera aussi la fonction &quot;Get State&quot; si elle existe pour stocker l'état actuel de l'utilisateur.</li>
+<li>L'information passe à travers toutes les couches logicielles (JSChannel, JS Input Problem) et vers edX</li>
+<li>Le script python intégré à l'activité JS-Input dans Open edX est lancé pour vérifier le résultat, et renvoie une information sous forme de note</li>
+<li>Le résultat est renvoyé vers le serveur edX</li>
+</ul>
 <div class="figure">
-<img src="static/img/js-input/get-grade.png" alt="Sequence de chargemment" /><p class="caption">Sequence de chargemment</p>
+<img src="static/img/js-input/get-grade.png" />
 </div>
-<p>Ensuite le résultat est stocké dans la base de donnée Open edX avec des information sur le temps exact de soumission et ce que l'on appelle un 'correct_map' qui permet de stocker le status (correct ou non) de la réponse après analyse par le script python de l'exercice.</p>
+<p>Ensuite le résultat est stocké dans la base de donnée Open edX avec :</p>
+<ul>
+<li>des informations sur le temps exact de soumission,</li>
+<li>un objet <code>correct_map</code> qui permet de stocker le status (correct ou non) de la réponse après analyse par le script python de l'exercice.</li>
+</ul>
 <p>Vous pouvez voir l'historique des soumissions grâce au bouton &quot;Historique des soumissions&quot; situé au dessous de l'activité (seulement accessible par l'enseignant).</p>
 <div class="figure">
-<img src="static/img/js-input/historique_soumission.png" alt="Sequence de chargemment" /><p class="caption">Sequence de chargemment</p>
+<img src="static/img/js-input/historique_soumission.png" />
 </div>
-<p>Cet historique va donner des résultats comme ceux-ci (application d'exemple Javascript):</p>
+<p>Cet historique va donner des résultats comme ceux-ci (application d'exemple Javascript) :</p>
 <pre><code>#4: 2015-05-11 20:46:34+00:00 (Europe/Paris time)
 
 Score: 1.0 / 1.0
@@ -212,7 +237,7 @@ Score: 1.0 / 1.0
   }
 }</code></pre>
 <h3 id="mécanismes-de-retour-dinformation"><a href="#mécanismes-de-retour-dinformation">Mécanismes de retour d'information</a></h3>
-<p>Il existe un troisième mécanisme de retour d'information appelé get_statefn. Dans la pratique, on peut se baser sur le retour de la note (qui peut donner bien plus qu'un état de note, mais aussi une idée de l'état de l'application). Dans ce cas, on va pouvoir définir une fonction de l'application qui est appelée lorsque l'on requiers un status sur l'application. Dans ce cas la réponse de l'application devra comporter deux champs: answer et state.</p>
+<p>Il existe un troisième mécanisme de retour d'information appelé <code>get_statefn</code>. Dans la pratique, on peut se baser sur le retour de la note (qui peut donner bien plus qu'un état de note, mais aussi une idée de l'état de l'application). Dans ce cas, on va pouvoir définir une fonction de l'application qui est appelée lorsque l'on requiert un statut sur l'application. Dans ce cas la réponse de l'application devra comporter deux champs: <code>answer</code> et <code>state</code>.</p>
 <p>Exemple:</p>
 <pre><code>{  
    &quot;answer&quot;:&quot;{&quot;cylinder&quot;:true,&quot;cube&quot;:false}&quot;,
@@ -220,15 +245,14 @@ Score: 1.0 / 1.0
 }</code></pre>
 <h2 id="les-modules"><a href="#les-modules">Les modules</a></h2>
 <h3 id="custom-response-problem-et-js-input-problem"><a href="#custom-response-problem-et-js-input-problem">Custom Response Problem et JS Input Problem</a></h3>
-<p>Ces deux types de problèmes sont des modules permettant de vérifier la réponse utilisateur par un petit script python avant l'enregistrement réél sur Open edX. Ceci permet de faire pas mal de choses notamment de noter de manière plus souple tout en restant automatique.</p>
-<p>Documentation ici: https://github.com/Stanford-Online/js-input-samples</p>
+<p>Ces deux types de problèmes sont des modules permettant de vérifier la réponse utilisateur par un petit script python avant l'enregistrement réel sur Open edX. Ceci permet de faire pas mal de choses notamment de noter de manière plus souple tout en restant automatique.</p>
+<p>La documentation est diponible ici : <a href="https://github.com/Stanford-Online/js-input-samples">https://github.com/Stanford-Online/js-input-samples</a></p>
 <h3 id="jschannel"><a href="#jschannel">JSChannel</a></h3>
-<p>JSChannel est un wrapper créé par Mozilla pour faciliter la communication entre pages et iframes (voir window.postMessage: https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage ). La bibliothèque JS Channel facilite ce travail: (https://github.com/mozilla/jschannel)</p>
+<p>JSChannel est un wrapper créé par Mozilla pour faciliter la communication entre pages et iframes (voir <code>window.postMessage</code> : <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage">https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage</a>). La bibliothèque JS Channel facilite ce travail : <a href="https://github.com/mozilla/jschannel">https://github.com/mozilla/jschannel</a>.</p>
 <h2 id="trucs-et-astuces"><a href="#trucs-et-astuces">Trucs et astuces</a></h2>
 <h3 id="intégrer-du-js-input-directement-de-github"><a href="#intégrer-du-js-input-directement-de-github">Intégrer du JS Input directement de github</a></h3>
-<p>Lorsque l'on développe une extension, il est assez pratique de pouvoir avoir une version de l'application externe au cours sur un site externe. Sinon on est obligé de recharger les fichiers correspondants à chaque mise à jour.</p>
-<p>Pour cela il est pratique d'utiliser le lien provenant directement de gihub sur les resources:</p>
-<p>https://rawgit.com/</p>
+<p>Lorsque l'on développe une extension, il est assez pratique d'avoir une version de l'application externe en cours sur un site externe. Sinon on est obligé de recharger les fichiers correspondants à chaque mise à jour.</p>
+<p>Pour cela il est pratique d'utiliser le lien provenant directement de gihub sur les resources : <a href="https://rawgit.com/">https://rawgit.com/</a></p>
 <h3 id="faire-une-activité-qui-retourne-une-note-différente-de-0-ou-1"><a href="#faire-une-activité-qui-retourne-une-note-différente-de-0-ou-1">Faire une activité qui retourne une note différente de 0 ou 1</a></h3>
 <pre><code>&lt;![CDATA[
 import json
@@ -255,11 +279,13 @@ def vglcfn(e, ans):
         ]
     }
 ]]&gt;</code></pre>
-<h3 id="liens-utiles"><a href="#liens-utiles">Liens utiles</a></h3>
-<p>Documentation de l'activité JS Input: http://edx-partner-course-staff.readthedocs.org/en/latest/exercises_tools/custom_javascript.html</p>
-<p>Documentation identique mais orientée développeur: http://edxpdrlab.readthedocs.org/en/latest/course_data_formats/jsinput.html</p>
-<p>Custom Python evaluated problem (Version générique du JS Input): http://edx-partner-course-staff.readthedocs.org/en/latest/exercises_tools/custom_python.html</p>
-<p>Stanford JS Input Samples: https://github.com/Stanford-Online/js-input-samples</p>
+<h3 id="liens-utiles-1"><a href="#liens-utiles-1">Liens utiles</a></h3>
+<ul>
+<li>Documentation de l'activité JS Input: <a href="http://edx-partner-course-staff.readthedocs.org/en/latest/exercises_tools/custom_javascript.html">http://edx-partner-course-staff.readthedocs.org/en/latest/exercises_tools/custom_javascript.html</a></li>
+<li>Documentation identique mais orientée développeur : <a href="http://edxpdrlab.readthedocs.org/en/latest/course_data_formats/jsinput.html">http://edxpdrlab.readthedocs.org/en/latest/course_data_formats/jsinput.html</a></li>
+<li>Custom Python evaluated problem (Version générique du JS Input) : <a href="http://edx-partner-course-staff.readthedocs.org/en/latest/exercises_tools/custom_python.html">http://edx-partner-course-staff.readthedocs.org/en/latest/exercises_tools/custom_python.html</a></li>
+<li>Stanford JS Input Samples : <a href="https://github.com/Stanford-Online/js-input-samples">https://github.com/Stanford-Online/js-input-samples</a></li>
+</ul>
 <h1 id="analytics"><a href="#analytics">Analytics</a></h1>
 <h2 id="introduction-1"><a href="#introduction-1">Introduction</a></h2>
 <p>FUN met à la disposition des participants au hackathon une quantité de logs extraits de ses machines de productions à fins d'analyse.</p>
@@ -274,8 +300,8 @@ def vglcfn(e, ans):
 <h2 id="analyse-des-logs-à-laide-de-elasticsearch"><a href="#analyse-des-logs-à-laide-de-elasticsearch">Analyse des logs à l'aide de ElasticSearch</a></h2>
 <p>Les logs fournis par FUN se prêtent particulièrement bien à l'analyse via ElasticSearch. Si vous décidez de charger les logs fournis dans un cluster ElasticSearch, nous vous recommandons d'installer la pile ELK : ElasticSearch + Logstash + Kibana.</p>
 <ul>
-<li>ElasticSearch est le moteur d'indexation et de recherche de vos données</li>
-<li>Kibana est le frontend qui vous permettra de visualiser vos données dans le navigateur</li>
+<li>ElasticSearch est le moteur d'indexation et de recherche de vos données.</li>
+<li>Kibana est le frontend qui vous permettra de visualiser vos données dans le navigateur.</li>
 <li>Logstash permet d'envoyer vos logs à ElasticSearch en les convertissant en évènements au format ad-hoc.</li>
 </ul>
 <h3 id="installation"><a href="#installation">Installation</a></h3>
@@ -314,5 +340,5 @@ def vglcfn(e, ans):
 }</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Copier-coller cette requête dans un fichier <code>query.json</code>, puis réaliser la requête à l'aide du script fourni dans ce dépôt :</p>
-<p><code>static/es.py query.json &gt; result.json</code></p></li>
+<p>static/es.py query.json &gt; result.json</p></li>
 </ol>

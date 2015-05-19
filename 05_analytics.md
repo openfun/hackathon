@@ -18,7 +18,6 @@ https://github.com/edx/event-tracking/blob/0.2.0/eventtracking/tracker.py#L65
 Chaque évènement loggé se présente sous la forme d'un blob JSON contenant au
 moins un champ `time`.
     
-
 ## Format des logs
 
 Les logs fournis par FUN sont anonymisés, ce qui signifie que les champs
@@ -34,8 +33,8 @@ ElasticSearch. Si vous décidez de charger les logs fournis dans un cluster
 ElasticSearch, nous vous recommandons d'installer la pile ELK : ElasticSearch +
 Logstash + Kibana.
 
-* ElasticSearch est le moteur d'indexation et de recherche de vos données
-* Kibana est le frontend qui vous permettra de visualiser vos données dans le navigateur
+* ElasticSearch est le moteur d'indexation et de recherche de vos données.
+* Kibana est le frontend qui vous permettra de visualiser vos données dans le navigateur.
 * Logstash permet d'envoyer vos logs à ElasticSearch en les convertissant en évènements au format ad-hoc.
 
 ### Installation
@@ -92,4 +91,4 @@ mieux est de :
 
 3. Copier-coller cette requête dans un fichier `query.json`, puis réaliser la requête à l'aide du script fourni dans ce dépôt :
 
-    ```static/es.py query.json > result.json```
+    static/es.py query.json > result.json

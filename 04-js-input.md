@@ -42,7 +42,7 @@ Tout d'abord, voici à quoi ressemble un problème de ce type dans studio:
 
 Les paramètres de l'activité dans studio sont les suivants:
 
-```
+<pre>
 <problem>
        <script type="loncapa/python">
 def all_true(exp, ans): return ans == "hi"
@@ -55,7 +55,7 @@ def all_true(exp, ans): return ans == "hi"
                html_file="/static/jsinput.html"/>
        </customresponse>
 </problem>
-```
+</pre>
 
 On peut en déduire que les étapes clés dans l'instanciation d'une activité JS-Input sont :
 
@@ -111,7 +111,7 @@ Vous pouvez voir l'historique des soumissions grâce au bouton "Historique des s
 
 Cet historique va donner des résultats comme ceux-ci (application d'exemple Javascript) :
 
-```
+<pre>
 #4: 2015-05-11 20:46:34+00:00 (Europe/Paris time)
 
 Score: 1.0 / 1.0
@@ -137,7 +137,7 @@ Score: 1.0 / 1.0
     "i4x-FUN-FUN101-problem-2d1cf6dd9012475ebf3d6295ccb1da72_2_1": "{\"answer\":\"{\\\"cylinder\\\":true,\\\"cube\\\":false}\",\"state\":\"{\\\"selectedObjects\\\":{\\\"cylinder\\\":true,\\\"cube\\\":false}}\"}"
   }
 }
-```
+</pre>
 
 ### Mécanismes de retour d'information
 
@@ -147,12 +147,12 @@ Dans ce cas, on va pouvoir définir une fonction de l'application qui est appel�
 
 Exemple:
 
-```
+<pre>
 {  
    "answer":"{"cylinder":true,"cube":false}",
    "state":"{"selectedObjects":{"cylinder":true,"cube":false}}"
 }
-```
+</pre>
 
 
 ## Les modules
@@ -180,7 +180,7 @@ Pour cela il est pratique d'utiliser le lien provenant directement de gihub sur 
 
 ### Faire une activité qui retourne une note différente de 0 ou 1
 
-```
+<pre>
 <![CDATA[
 import json
 def vglcfn(e, ans):
@@ -206,7 +206,7 @@ def vglcfn(e, ans):
 		]
 	}
 ]]>
-```
+</pre>
 
 
 ### Liens utiles

@@ -75,7 +75,7 @@ mieux est de :
 1. créer une requête via Kibana, dans l'onglet "Discover".
 2. récupérer cette requête au format JSON, en repliant le graphe de résultats, puis sous l'onglet "Request". Par exemple :
     
-```
+<pre>
 {
   "size": 500,
   "sort": {
@@ -92,7 +92,7 @@ mieux est de :
     }
   }
 }
-```
+</pre>
 
 3. Copier-coller cette requête dans un fichier `query.json`, puis réaliser la requête à l'aide du script fourni dans ce dépôt :
 

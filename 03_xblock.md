@@ -69,7 +69,7 @@ Ouvrons le fichier `hellostudent/static/html/hellostudent.html` et remplaçons s
 
 ### Enregistrer notre xbock dans le workbench.
 
-Pour afficher notre xblock il est nécessaire de l'installer dans l'environnement de travail, le 'workbench'. L'installation est controlée par fichier `setup.py` qu'il faudra modifier pour l'adapter à nos besoin.
+Pour afficher notre xblock il est nécessaire de l'installer dans l'environnement de travail, le 'workbench'. L'installation est controlée par le fichier `setup.py` qu'il faudra modifier pour l'adapter à nos besoins.
 
         # Se mettre dans l'environnement virtuel avant l'installation du paquet.
         source ~/venvs/xblock-sdk/bin/activate
@@ -79,7 +79,7 @@ Pour afficher notre xblock il est nécessaire de l'installer dans l'environnemen
 
 Ici, nous travaillons dans le contexte du SDK, mais sachez que ce même principe utilisant `pip install` est utilisé pour installer un XBlock dans la plateforme Edx.
 
-Vous devriez maintenant avoir un environement minial complet. 
+Vous devriez maintenant avoir un environement minimal complet. 
 
 Pour rappel, les commandes pour démarrer le serveur:
 
@@ -92,3 +92,16 @@ Voici ce que vous devriez voir:
 ![](static/img/indexsdk.png)
 
 ![](static/img/hellodk1.png)
+
+### Liens utiles:
+
+La documentation officielle mais en cours de construction.
+http://xblock.readthedocs.org/en/latest/
+
+Un tutoriel pour lire et enregistrer des vidéos depuis un xblock.
+http://opencraft.com/doc/edx/xblock/tutorial.html
+
+Une liste des xblocks déjà existants.
+https://github.com/edx/edx-platform/wiki/List-of-XBlocks
+
+

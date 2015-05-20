@@ -9,29 +9,10 @@ Les XBlocks enrichissent les contenu de cours : il existe des XBlock pour affich
 
 Vous trouverez dans ce guide, les instructions pour installer le SDK et pour créer votre premier XBlock.
 
-## Préliminaires
-
-### Installer Python
-
-    sudo apt-get install python
-
-### Installer Pip
-
-Pip est un gestionnaire de dépendance python.
- 
-Pour une installation sous Debian/Ubuntu
- 
-     sudo apt-get install python-pip
- 
- Une autre façon d'installer pip en téléchargeant le script `https://bootstrap.pypa.io/get-pip.py`:
- 
-    wget https://bootstrap.pypa.io/get-pip.py -P /tmp/ && sudo python /tmp/get-pip.py
-
 ## Installer le xblock sdk depuis le dépot Github
 
 Création de l'environnement virtuel :
 
-    sudo apt-get install python-virtualenv
     mkdir -p ~/venvs/
     virtualenv ~/venvs/xblock-sdk
     source ~/venvs/xblock-sdk/bin/activate

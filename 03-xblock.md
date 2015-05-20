@@ -63,10 +63,8 @@ Ici, nous travaillons dans le contexte du SDK, mais sachez que ce même principe
 
 Vous devriez maintenant avoir un environnement minimal complet. 
 
-Pour rappel, les commandes pour démarrer le serveur :
+Pour rappel, la commande pour démarrer le serveur :
 
-    source ~/venvs/xblock-sdk/bin/activate
-    cd ~/xblock-dev/hellostudent/
     python manage.py runserver 0.0.0.0:8001
 
 Voici ce que vous devriez voir:

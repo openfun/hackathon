@@ -51,7 +51,7 @@ Ouvrons le fichier `hellostudent/static/html/hellostudent.html` et remplaçons s
         <p>Hello Student !</p>
     </div>
 
-## Enregistrer notre xbock dans le workbench.
+## Enregistrer notre xblock dans le workbench.
 
 Pour afficher notre xblock il est nécessaire de l'installer dans l'environnement de travail, le 'workbench'. L'installation est contrôlée par le fichier `setup.py` qu'il faudra modifier pour l'adapter à nos besoins.
 

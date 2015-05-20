@@ -35,10 +35,7 @@ Si tout va bien la page suivante devrait apparaître :
 
 ## Créons la structure de notre xblock
 
-    # Le code du xblock sera dans le dossier ~/xblock-dev/
-    mkdir ~/xblock-dev/
-    cd ~/xblock-dev/
-    python ~/xblock-sdk/script/startnew.py 
+    python script/startnew.py 
 
 Le script demande d'abord un nom court pour notre xblock, choisissons 'hellostudent'.
 Ensuite rentrons le nom de classe 'HelloStudentXBlock'
@@ -51,9 +48,7 @@ Ouvrons le fichier `hellostudent/static/html/hellostudent.html` et remplaçons s
 
 
     <div class="hellostudent_block">
-        <p>
-             Hello Student !
-         </p>
+        <p>Hello Student !</p>
     </div>
 
 ## Enregistrer notre xbock dans le workbench.

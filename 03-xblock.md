@@ -13,15 +13,14 @@ Vous trouverez dans ce guide, les instructions pour installer le SDK et pour cr√
 
 Cr√©ation de l'environnement virtuel :
 
-    mkdir -p ~/venvs/
-    virtualenv ~/venvs/xblock-sdk
-    source ~/venvs/xblock-sdk/bin/activate
+    mkdir venvs/
+    virtualenv venvs/xblock-sdk
+    source venvs/xblock-sdk/bin/activate
 
 Installation du xblock sdk :
 
-    cd ~/
     git clone https://github.com/edx/xblock-sdk.git
-    cd ~/xblock-sdk/
+    cd xblock-sdk/
     make install
     python manage.py syncdb
 

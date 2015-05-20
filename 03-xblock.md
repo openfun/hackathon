@@ -75,15 +75,10 @@ Voici ce que vous devriez voir:
 
 ![](static/img/hellodk1.png)
 
-## Liens utiles:
+## Liens utiles
 
-La documentation officielle mais en cours de construction.
-http://xblock.readthedocs.org/en/latest/
-
-Un tutoriel pour lire et enregistrer des vidéos depuis un xblock.
-http://opencraft.com/doc/edx/xblock/tutorial.html
-
-Une liste des xblocks déjà existants.
-https://github.com/edx/edx-platform/wiki/List-of-XBlocks
+- La documentation officielle mais en cours de construction : [http://xblock.readthedocs.org/en/latest/](http://xblock.readthedocs.org/en/latest/)
+- Un tutoriel pour lire et enregistrer des vidéos depuis un xblock : [http://opencraft.com/doc/edx/xblock/tutorial.html](http://opencraft.com/doc/edx/xblock/tutorial.html)
+- Une liste des xblocks déjà existants : [https://github.com/edx/edx-platform/wiki/List-of-XBlocks](https://github.com/edx/edx-platform/wiki/List-of-XBlocks)
 
 

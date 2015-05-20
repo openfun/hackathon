@@ -9,6 +9,8 @@ Les XBlocks enrichissent les contenu de cours : il existe des XBlock pour affich
 
 Vous trouverez dans ce guide, les instructions pour installer le SDK et pour créer votre premier XBlock.
 
+## Préliminaires
+
 ### Installer Python
 
     sudo apt-get install python
@@ -25,8 +27,7 @@ Pour une installation sous Debian/Ubuntu
  
     wget https://bootstrap.pypa.io/get-pip.py -P /tmp/ && sudo python /tmp/get-pip.py
 
-
-### Installer le xblock sdk depuis le dépot Github
+## Installer le xblock sdk depuis le dépot Github
 
 Création de l'environnement virtuel :
 
@@ -43,7 +44,7 @@ Installation du xblock sdk :
     make install
     python manage.py syncdb
 
-### Lancer le serveur de développement
+## Lancer le serveur de développement
 
     python manage.py runserver 0.0.0.0:8001
 
@@ -52,7 +53,7 @@ Si tout va bien la page suivante devrait apparaître :
 
 ![](http://opencraft.com/doc/edx/xblock/_images/workbench_home.png "Optional title")
 
-### Créons la structure de notre xblock
+## Créons la structure de notre xblock
 
     # Le code du xblock sera dans le dossier ~/xblock-dev/
     mkdir ~/xblock-dev/
@@ -64,7 +65,7 @@ Ensuite rentrons le nom de classe 'HelloStudentXBlock'
 
 Nous avons maitenant un dossier 'hellostudent' contenant la structure du XBlock.
 
-### Afficher 'Hello student'
+## Afficher 'Hello student'
 
 Ouvrons le fichier `hellostudent/static/html/hellostudent.html` et remplaçons son contenu par :
 
@@ -75,7 +76,7 @@ Ouvrons le fichier `hellostudent/static/html/hellostudent.html` et remplaçons s
          </p>
     </div>
 
-### Enregistrer notre xbock dans le workbench.
+## Enregistrer notre xbock dans le workbench.
 
 Pour afficher notre xblock il est nécessaire de l'installer dans l'environnement de travail, le 'workbench'. L'installation est contrôlée par le fichier `setup.py` qu'il faudra modifier pour l'adapter à nos besoins.
 
@@ -100,7 +101,7 @@ Voici ce que vous devriez voir:
 
 ![](static/img/hellodk1.png)
 
-### Liens utiles:
+## Liens utiles:
 
 La documentation officielle mais en cours de construction.
 http://xblock.readthedocs.org/en/latest/

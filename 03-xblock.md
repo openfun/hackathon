@@ -40,7 +40,7 @@ Si tout va bien la page suivante devrait apparaître :
 Le script demande d'abord un nom court pour notre xblock, choisissons 'hellostudent'.
 Ensuite rentrons le nom de classe 'HelloStudentXBlock'
 
-Nous avons maitenant un dossier 'hellostudent' contenant la structure du XBlock.
+Nous avons maintenant un dossier 'hellostudent' contenant la structure du XBlock.
 
 ## Afficher 'Hello student'
 
@@ -56,8 +56,7 @@ Ouvrons le fichier `hellostudent/static/html/hellostudent.html` et remplaçons s
 Pour afficher notre xblock il est nécessaire de l'installer dans l'environnement de travail, le 'workbench'. L'installation est contrôlée par le fichier `setup.py` qu'il faudra modifier pour l'adapter à nos besoins.
 
     # Se mettre dans l'environnement virtuel avant l'installation du paquet.
-    source ~/venvs/xblock-sdk/bin/activate
-    cd ~/xblock-dev/hellostudent/
+    cd hellostudent/
     pip install -e .
 
 Ici, nous travaillons dans le contexte du SDK, mais sachez que ce même principe utilisant `pip install` est utilisé pour installer un XBlock dans la plateforme Edx.

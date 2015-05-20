@@ -26,9 +26,9 @@ Installation du xblock sdk :
 
 ## Lancer le serveur de développement
 
-    python manage.py runserver 0.0.0.0:8001
+    python manage.py runserver 0.0.0.0:8010
 
-Maintenant depuis votre navigateur allez à cette adresse 127.0.0.1:8001.
+Maintenant depuis votre navigateur allez à cette adresse 127.0.0.1:8010.
 Si tout va bien la page suivante devrait apparaître :
 
 ![](http://opencraft.com/doc/edx/xblock/_images/workbench_home.png "Optional title")
@@ -65,7 +65,7 @@ Vous devriez maintenant avoir un environnement minimal complet.
 
 Pour rappel, la commande pour démarrer le serveur :
 
-    python manage.py runserver 0.0.0.0:8001
+    python manage.py runserver 0.0.0.0:8010
 
 Voici ce que vous devriez voir:
 

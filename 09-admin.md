@@ -1,5 +1,5 @@
 ---
-title: Administrer OpenedX
+title: Administrer Open edX
 layout: default
 ---
 
@@ -75,7 +75,7 @@ Les logs applicatifs studio et lms:
     sudo tail -f /edx/var/log/cms/edx.log
 
 
-Les tracking logs qui aggregent le comportement des utilisateurs du lms :
+Les tracking logs qui agrègent le comportement des utilisateurs du lms :
 
     /edx/var/log/tracking
 

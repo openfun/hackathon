@@ -5,7 +5,7 @@ layout: default
 
 # Mon premier Xblock 'Hello Student!' {#xblocks}
 
-Les XBlocks sont les briques avec lesquelles sont construits les cours : il existe des XBlock pour afficher des vidéos dans le cours, pour y insérer des quiz, pour permettre des discussions de forum, ou même pour exécuter des lignes code. Un Xblock est donc une petite application web independante et réutilisable qui s'intègre dans edX, elle dispose de sa propre couche de persistence, et est constituée de vues Python à exécuter sur le serveur et de fichier statiques HTML, CSS et Javascript pour le client. edX met à disposition un SDK qui aide à la création de XBlocks. Ainsi, il est possible commencer le développement de vos modules XBlock sans avoir à installer la platforme edX.
+Les XBlocks sont les briques avec lesquelles sont construits les cours : il existe des XBlock pour afficher des vidéos dans le cours, pour y insérer des quiz, pour permettre des discussions de forum, ou même pour exécuter des lignes code. Un Xblock est donc une petite application web independante et réutilisable qui s'intègre dans edX, elle dispose de sa propre couche de persistence, et est constituée de vues Python à exécuter sur le serveur et de fichiers statiques HTML, CSS et Javascript pour le client. edX met à disposition un SDK qui aide à la création de XBlocks. Ainsi, il est possible commencer le développement de vos modules XBlock sans avoir à installer la platforme edX.
 
 Vous trouverez dans ce guide, les instructions pour installer le SDK et pour créer votre premier XBlock.
 

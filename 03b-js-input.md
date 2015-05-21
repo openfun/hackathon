@@ -23,20 +23,30 @@ Tout d'abord, voici à quoi ressemble un problème de ce type dans studio:
 
 Les paramètres de l'activité dans studio sont les suivants:
 
-    <problem>
-           <script type="loncapa/python">
-    def all_true(exp, ans): return ans == "hi"
-           </script>
-           <customresponse cfn="all_true">
-               <jsinput gradefn="gradefn"
-                   height="500"
-                   get_statefn="getstate"
-                   set_statefn="setstate"
-                   html_file="/static/jsinput.html"/>
-           </customresponse>
-    </problem>
+{% highlight xml %}
+<problem>
+<script type="loncapa/python">
+<![CDATA[
+def all_true(exp, ans): return True
+]]>
+</script>
+  <customresponse cfn="all_true">
+    <jsinput gradefn="gradefn"
+      height="500"
+      get_statefn="getstate"
+      set_statefn="setstate"
+      sop="false"
+      html_file="https://studio.edx.org/c4x/edX/DemoX/asset/webGLDemo.html"/>
+  </customresponse>
+</problem>
+{% endhighlight %}
 
-On peut en déduire que les étapes clés dans l'instanciation d'une activité JS-Input sont :
+Les parties importantes de ce programme d'exemple, sont:
+- Le tag 'jsinput' qui définit la page à afficher (static/jsinput.html)
+- Le tag 'customresponse' qui correspond au problème en lui-même.
+- Le script 'loncapa/python' qui permet d'analyser les réponses du problème et de retourner une note.
+
+On peut en déduire les étapes clés dans l'instanciation d'une activité JS-Input :
 
 - Le chargement de l'activité et restauration de l'état intial: `set_statefn`
 - Les actions de vérification du problème côté Open edX: `gradefn`
@@ -155,32 +165,40 @@ Pour cela il est pratique d'utiliser le lien provenant directement de gihub sur 
 
 ### Faire une activité qui retourne une note différente de 0 ou 1
 
-{% highlight python %}
+{% highlight xml %}
+<problem>
+<script type="loncapa/python">
 <![CDATA[
 import json
 def vglcfn(e, ans):
-    par = json.loads(ans)
-    state = json.loads(par["state"])
-    selectedObjects = state["selectedObjects"]
-    grade = 0.0
-    ok = False
-    message = 'Essayez encore'
+ par = json.loads(ans)
+ state = json.loads(par["state"])
+ selectedObjects = state["selectedObjects"]
+ grade = 0.0
+ ok = False
+ message = 'Essayez encore'
+ if selectedObjects["cylinder"] and selectedObjects["cube"]:
+  grade = 0.5
+  ok=True
+  message = 'Presque ça!'
 
-    if selectedObjects["cylinder"] and selectedObjects["cube"]:
-        grade = 0.5
-        ok=True
-        message = 'Presque ça!'
-    if selectedObjects["cylinder"] and not selectedObjects["cube"]:
-        grade = 1
-        ok=True
-        message = 'Yesss !'
+ if selectedObjects["cylinder"] and not selectedObjects["cube"]:
+  grade = 1
+  ok=True
+  message = 'Yesss !'
 
-    return {
-        'input_list': [
-            { 'ok': ok, 'msg': message, 'grade_decimal':grade},
-        ]
-    }
+ return { 'input_list': [{ 'ok': ok, 'msg': message, 'grade_decimal':grade},]}
 ]]>
+</script>
+  <customresponse cfn="vglcfn">
+    <jsinput gradefn="gradefn"
+      height="500"
+      get_statefn="getstate"
+      set_statefn="setstate"
+      sop="false"
+      html_file="https://studio.edx.org/c4x/edX/DemoX/asset/webGLDemo.html"/>
+  </customresponse>
+</problem>
 {% endhighlight %}
 
 

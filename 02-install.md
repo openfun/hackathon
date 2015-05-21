@@ -80,3 +80,13 @@ Vous pouvez également lancer les tests associés à FUN :
 Sous le capot, 'fun' est un raccourci permettant d'exécuter une variété de
 commandes. Pour plus d'informations, consultez la documentation de fun-cmd :
 [https://github.com/openfun/fun-cmd](https://github.com/openfun/fun-cmd)
+
+
+### Le forum
+
+Le forum fonctionne avec un service REST Ruby qui utilise Mongo pour stocker les messages, ElasticSearch pour les indexer et un client Django qui se trouve dans le dépôt `edx-platform`.
+
+Pour lancer le service forum dans un terminal :
+
+    sudo su forum
+    ruby app.rb -p 18080

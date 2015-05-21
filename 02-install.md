@@ -14,7 +14,9 @@ tester ces applications. Dans la suite de cette section, nous allons voir les
 ### Téléchargement
 
 Les VM OpenFUN sont disponibles au téléchargement via bittorrent. Si vous ne
-disposez pas d'un client bittorrent (tel que Transmission, Azure ou Deluge),
+disposez pas d'un client bittorrent (tel que
+[Transmission](http://www.transmissionbt.com/), [Vuze](http://www.vuze.com/) ou
+[Deluge](http://deluge-torrent.org/)),
 vous devrez télécharger les VM en HTTP, ce qui risque d'être plus lent et de
 saturer les serveurs de FUN.
 

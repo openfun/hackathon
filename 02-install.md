@@ -1,9 +1,9 @@
 ---
-title: Installation d'une machine virtuelle OpenFUN / Edx
+title: Installation d'une machine virtuelle OpenFUN / edX
 layout: default
 ---
 
-# Installation d'une machine virtuelle OpenFUN / Edx {#install}
+# Installation d'une machine virtuelle OpenFUN / edX {#install}
 
 Les composants nécessaires à l'installation de FUN ou d'edX sont nombreux et
 relativement complexes ; c'est pourquoi il existe des machines virtuelles (VM)

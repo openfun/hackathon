@@ -16,10 +16,10 @@ réduit de types de quiz.
 Open edX propose de résoudre ce problème en mettant à portée du
 développeur/concepteur deux technologies:
 
-- Le [Xblock](/03a-xblock.html): une extension en python qui doit
+- Le [Xblock](/hackathon/03a-xblock.html): une extension en python qui doit
 être installée sur le serveur qui héberge la plateforme. C'est probablement la
 meilleure solution si vous avez accès au serveur.
-- Le JS-Input [JS-Input](/03b-js-input.html): probablement moins flexible en terme de possibilités offertes, mais
+- Le JS-Input [JS-Input](/hackathon/03b-js-input.html): probablement moins flexible en terme de possibilités offertes, mais
 probablement la réponse à de nombreux besoins.  Le JS-Input a l'avantage d'être
 une extension dont l'installation se fait directement dans un cours sans
 nécéssiter un accès au serveur.

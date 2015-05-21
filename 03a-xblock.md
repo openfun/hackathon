@@ -35,7 +35,7 @@ Si tout va bien la page suivante devrait apparaître :
 
 ## Créons la structure de notre xblock
 
-    python script/startnew.py 
+    python script/startnew.py
 
 Le script demande d'abord un nom court pour notre xblock, choisissons 'hellostudent'.
 Ensuite rentrons le nom de classe 'HelloStudentXBlock'
@@ -61,7 +61,7 @@ Pour afficher notre xblock il est nécessaire de l'installer dans l'environnemen
 
 Ici, nous travaillons dans le contexte du SDK, mais sachez que ce même principe utilisant `pip install` est utilisé pour installer un XBlock dans la plateforme Edx.
 
-Vous devriez maintenant avoir un environnement minimal complet. 
+Vous devriez maintenant avoir un environnement minimal complet.
 
 Pour rappel, la commande pour démarrer le serveur :
 
@@ -78,5 +78,3 @@ Voici ce que vous devriez voir:
 - La documentation officielle mais en cours de construction : [http://xblock.readthedocs.org/en/latest/](http://xblock.readthedocs.org/en/latest/)
 - Un tutoriel pour lire et enregistrer des vidéos depuis un xblock : [http://opencraft.com/doc/edx/xblock/tutorial.html](http://opencraft.com/doc/edx/xblock/tutorial.html)
 - Une liste des xblocks déjà existants : [https://github.com/edx/edx-platform/wiki/List-of-XBlocks](https://github.com/edx/edx-platform/wiki/List-of-XBlocks)
-
-

@@ -12,7 +12,7 @@ Vous pouvez acceder au shell MySQL avec l'utilisateur `edxapp001`, le mot de pas
     mysql -u edxapp001 -p
 
 Vous pouvez aussi y acceder via Django et la commande `fun` :
-    
+
     fun lms.dev dbshell
 
 
@@ -20,7 +20,7 @@ Vous pouvez aussi y acceder via Django et la commande `fun` :
 
 Quelques commande pour acceder aux collections Mongo :
 
-    ⇒  mongo
+    mongo
     MongoDB shell version: 2.6.6
     connecting to: test
     > show dbs
@@ -44,7 +44,7 @@ Quelques commande pour acceder aux collections Mongo :
 Les fichiers de logs propres à edX se trouvent dans `/edx/var/log/`
 
 Les logs applicatifs studio et lms:
-    
+
     sudo tail -f /edx/var/log/lms/edx.log
     sudo tail -f /edx/var/log/cms/edx.log
 
@@ -52,5 +52,3 @@ Les logs applicatifs studio et lms:
 Les tracking logs qui aggregent le comportement des utilisateurs du lms :
 
     /edx/var/log/tracking
-
-

@@ -7,7 +7,8 @@ layout: default
 
 ## Introduction
 
-Le JS-Input est une spécificité d'OpenedX permettant d'étendre les types d'activités disponibles sur la plateforme.
+Le JS-Input est une spécificité d'OpenedX permettant d'étendre les types d'activités
+disponibles sur la plateforme.
 
 Une activité JS-Input c'est : une page HTML avec un peu de Javascript !
 
@@ -65,7 +66,10 @@ Pour l'instant occupons-nous du processus décrit sur ce schéma:
 
 ![](static/img/js-input/load.png)
 
-Lorsque la page se charge, Open edX retrouve le dernier état de l'application pour un utilisateur donné. Cet état se présente sous la forme d'une information codée en JSON. Le format de cette information est particulière à l'application JS-Input (seule elle la comprend en réalité). Sa signification est définie par le créateur de l'activité.
+Lorsque la page se charge, Open edX retrouve le dernier état de l'application pour un
+utilisateur donné. Cet état se présente sous la forme d'une information codée
+en JSON. Le format de cette information est particulière à l'application
+JS-Input (seule elle la comprend en réalité). Sa signification est définie par le créateur de l'activité.
 
 Si aucun "état" (JSON) pour l'utilisateur n'est trouvé et que l'on a spécifié un état initial, celui-ci est chargé et présenté à l'application JS-Input par un appel à la fonction "setState".
 

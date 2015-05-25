@@ -26,5 +26,5 @@ Vous allez très probablement avoir besoin d'un certain nombre de logiciels que 
     sudo apt-get install python python-pip python-virtualenv git make
 
 Une autre façon d'installer pip consiste à télécharger le script `https://bootstrap.pypa.io/get-pip.py`:
- 
+
     wget https://bootstrap.pypa.io/get-pip.py -P /tmp/ && sudo python /tmp/get-pip.py

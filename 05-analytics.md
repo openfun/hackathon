@@ -77,6 +77,7 @@ mieux est de :
 1. créer une requête via Kibana, dans l'onglet "Discover".
 2. récupérer cette requête au format JSON, en repliant le graphe de résultats, puis sous l'onglet "Request". Par exemple :
 
+```
     {
       "size": 500,
       "sort": {
@@ -87,12 +88,13 @@ mieux est de :
           "query": {
             "query_string": {
               "query": "*",
-              "analyze_wildcard": true
+              "analyze_wildcard": true,
             }
           }
         }
       }
     }
+```
 
 3. Copier-coller cette requête dans un fichier `query.json`, puis réaliser la requête à l'aide du script fourni dans ce dépôt :
 

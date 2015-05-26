@@ -46,7 +46,7 @@ Les étapes sont:
 
 Exemple de configuration lms.env.json (extrait):
 
-{% highlight %}
+{% highlight json %}
 "FEATURES": {
         "AUTH_USE_OPENID_PROVIDER": true,
 ...

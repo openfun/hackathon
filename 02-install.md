@@ -11,7 +11,16 @@ disponibles en simple téléchargement qui permettent de commencer rapidement à
 tester ces applications. Dans la suite de cette section, nous allons voir les
 étapes à suivre pour obtenir un environnement de développement fonctionnel.
 
-### Téléchargement (optionnel mais fortement recommandé)
+# Prérequis
+
+- Configuration recommandée : Ubuntu/Linux 14.04
+- VirtualBox >= 4.3.12
+- Vagrant >= 1.6.5
+
+
+# Version Open FUN
+
+##  FUN - Téléchargement (optionnel mais fortement recommandé)
 
 Les VM OpenFUN sont disponibles au téléchargement via bittorrent. Si vous ne
 disposez pas d'un client bittorrent (tel que
@@ -32,7 +41,7 @@ Avant de créer votre VM, il faudra indiquer à Vagrant le répertoire dans lequ
     export VAGRANT_BOXES=/chemin/vers/mon/repertoire/de/torrents/
     export FUN_RELEASE=2.11 # Si vous avez téléchargé la version 2.11 d'OpenFUN
 
-### Clonage des dépôts de code Open edx et OpenFUN (optionnel mais recommandé aux développeurs)
+## Clonage des dépôts de code Open edx et OpenFUN (optionnel mais recommandé aux développeurs)
 
 Cette étape optionnelle est néanmoins bien pratique si vous comptez contribuer
 au code d'Open edX ou de FUN. En effet, vous voudrez vraisemblablement éditer
@@ -51,7 +60,7 @@ résultat dans votre VM. Pour cela :
     # Indiquez à Vagrant le répertoire dans lequel vous avez cloné les dépôts
     export VAGRANT_MOUNT_BASE=/home/user/repos
 
-### Lancement de la machine virtuelle
+## Lancement de la machine virtuelle
 
 
 Après avoir (éventuellement) réalisé les étapes ci-dessus, vous êtes prêt à
@@ -69,7 +78,7 @@ Lancez votre machine virtuelle :
 En cas de problème, pensez à consulter le README dans lequel votre problème est
 peut-être déjà décrit.
 
-### Lancement d'un serveur web
+## Lancement d'un serveur web
 
 Si vous avez correctement lancé votre machine virtuelle, vous pouvez maintenant
 vous y connecter via ssh et lancer un serveur web local :
@@ -79,7 +88,7 @@ vous y connecter via ssh et lancer un serveur web local :
     vagrant ssh
 
     ######### Commandes exécutées dans la VM
-
+    
     # La plupart des applications sont exécutées par l'utilisateur edxapp
     sudo su edxapp
 
@@ -111,7 +120,7 @@ commandes. Pour plus d'informations, consultez la documentation de fun-cmd :
 [https://github.com/openfun/fun-cmd](https://github.com/openfun/fun-cmd)
 
 
-### Le forum
+## Le forum
 
 Le forum fonctionne avec un service REST Ruby qui utilise Mongo pour stocker les messages, ElasticSearch pour les indexer et un client Django qui se trouve dans le dépôt `edx-platform`.
 
@@ -119,3 +128,58 @@ Pour lancer le service forum dans un terminal :
 
     sudo su forum
     ruby app.rb -p 18080
+
+# Version edX (Birch)
+
+Les étapes sont données en détail ici [https://github.com/edx/configuration/wiki/edX-Developer-Stack](https://github.com/edx/configuration/wiki/edX-Developer-Stack)
+
+## La préparation
+
+Créer un répertoire et cloner les repositories principaux:
+
+
+    mkdir devstack
+    cd devstack
+    curl -L https://raw.githubusercontent.com/edx/configuration/master/vagrant/release/devstack/Vagrantfile > Vagrantfile
+    git clone https://github.com/edx/edx-platform.git
+    git clone https://github.com/edx/cs_comments_service.git
+    vagrant plugin install vagrant-vbguest
+    vagrant up
+
+
+## Lancer la VM
+
+Une fois que l'installation s'est bien déroulée, vous pouvez démarrer votre devstack en tapant:
+
+
+    vagrant ssh
+    sudo su edxapp
+    paver devstack lms &
+    paver devstack studio &
+
+
+Comme pour l'installation de FUN, le forum est démarré par un:
+
+
+    sudo su forum
+    bundle install
+    ruby app.rb -p 18080
+
+
+# Notes
+
+### Soucis avec la VM
+
+Il a été constaté que parfois l'application était très lente voire se bloquait complètement. Ceci est dû à un problème de DNS
+dans virtual box. Voir [http://stackoverflow.com/questions/28562968/django-1-4-18-dev-server-slow-to-respond-under-virtualbox/30356662#30356662](http://stackoverflow.com/questions/28562968/django-1-4-18-dev-server-slow-to-respond-under-virtualbox/30356662#30356662).
+La solution est de rajouter 10.0.2.2 10.0.2.2 dans votre /etc/hosts
+
+Pour d'autres trucs et astuces voir la page: [https://github.com/openfun/fun-boxes](https://github.com/openfun/fun-boxes)
+
+## La commande FUN
+
+La commande 'fun' vous donne accès directement à la commande de base appelée 'manage.py'.
+Tapez par exemple :
+
+
+    fun lms.dev --help

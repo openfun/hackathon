@@ -11,8 +11,7 @@ des site webs par des outils "mobiles" (tablettes, téléphonne portable) est en
 Il est alors évident que créer une application mobile pour suivre son MOOC est devenue nécessaire. Open edX, comme la plupart des
 plateformes de MOOC propose une version Mobile de ses applications.
 
-Dans ce document nous allons voir comment installer l'application mobile sous Android et ainsi commencer à pouvoir développer
-pour du mobile.
+Dans ce document nous allons voir comment installer l'application mobile sous Android et ainsi commencer à pouvoir développer sur application mobile.
 
 # Les prérequis
 
@@ -30,4 +29,24 @@ pas avoir un emulateur Android qui coexiste avec la VM de Open edX ([Plus d'info
 
 ## L'application Mobile
 
-L'application Mobile OpenedX est disponible ici: https://github.com/edx/edx-app-android
+L'application Mobile OpenedX est disponible ici: [https://github.com/edx/edx-app-android](https://github.com/edx/edx-app-android)
+
+Pour l'installer, il suffit de suivre les instructions ici : [http://edx-installing-configuring-and-running.readthedocs.org/en/latest/mobile.html](http://edx-installing-configuring-and-running.readthedocs.org/en/latest/mobile.html)
+
+Les étapes sont:
+1. Modification de lms.json pour activer les API mobiles
+2. Création d'une clé OAuth
+
+## Quelques notes
+
+### Les vidéos
+
+Pour l'instant l'application mobile n'est compatible qu'avec le lecteur vidéo natif d'edX.
+
+## Les API
+
+Les API mobiles edX permettent d'accéder à l'intérieur des cours pour y rechercher les vidéos, les transcripts par exemple [Mobile API Endpoints](http://edx.readthedocs.org/projects/edx-platform-api/en/latest/mobile/endpoints.html):
+- Détails pour un utilisateur donné
+- Page de Syllabus de cours
+- Les information / annonces du cours
+- Les vidéos...

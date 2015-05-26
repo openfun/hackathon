@@ -44,7 +44,7 @@ Il est possible d'utiliser les lecteurs natifs des plateforme d'hébergement et 
 Dailymotion, sponsor de cet événement, sera là pour vous guider quant à l'intégration de fonctionnalités proposées dans les projets (Quiz Vidéo...).
 
 Voci quelques liens vers l'API dailymotion.
-- Lien vers le site développeur [ https://developer.dailymotion.com/​](https://developer.dailymotion.com/​)
+- Lien vers le site développeur [ https://developer.dailymotion.com/](https://developer.dailymotion.com/)
 
 Il existe un nouveau player HTML5 avec une API similiaire à l'ancienne [API](https://developer.dailymotion.com/documentation#player-api)
 
@@ -54,7 +54,8 @@ Vous trouverez plus d'information ici sur le [Nouveau Lecteur]([http://www.daily
 
 Voici un résumé court des fonctionalités du lecteur, modifiables par l' [API](https://developer.dailymotion.com/documentation#player-api).
 
-Il est possible de:
+Il est possible de :
+
 - modifier les couleurs dans la barre de contrôle
 - d'afficher ou non le logo dailymotion dans cette barre
 - les partenaires "verified" peuvent appliquer leur logo en bas à droite des videos avec un lien vers leur site.

@@ -20,7 +20,7 @@ Vous pouvez aussi y acceder via Django et la commande `fun` :
 
 Quelques commande pour acceder aux collections Mongo :
 
-    mongo
+    $ mongo
     MongoDB shell version: 2.6.6
     connecting to: test
     > show dbs
@@ -48,7 +48,7 @@ Apres un reboot de la machine virtuelle, il arrive que le service Mongo ne redem
 
 Le service ElasticSearch écoute sur le port 9200:
 
-    ⇒  curl localhost:9200
+    $ curl localhost:9200
     {
       "ok" : true,
       "status" : 200,
@@ -96,4 +96,4 @@ Sur le plan des composants:
 - Les bases de données (MySQL pour les données étudiants et administration, Mongodb pour la structure de cours et données des forums)
 
 Voici un schéma général d'une installation Open edX:
-![Edx architecture](https://open.edx.org/sites/default/files/wysiwyg/open-edx-pages/edX_architecture_CMS_LMS_0.png)
+![Edx architecture](http://open.edx.org/sites/default/files/wysiwyg/open-edx-pages/edX_architecture_CMS_LMS_0.png)

@@ -8,7 +8,7 @@ layout: default
 ## Introduction
 
 FUN met à la disposition des participants au hackathon une quantité de logs
-extraits de ses machines de productions à fins d'analyse. 
+extraits de ses machines de productions à fins d'analyse.
 
 ## Téléchargement des fichiers de logs
 
@@ -22,7 +22,7 @@ https://github.com/edx/event-tracking/blob/0.2.0/eventtracking/tracker.py#L65
 
 Chaque évènement loggé se présente sous la forme d'un blob JSON contenant au
 moins un champ `time`.
-    
+
 ## Format des logs
 
 Les logs fournis par FUN sont anonymisés, ce qui signifie que les champs
@@ -66,6 +66,8 @@ Kibana et observer ces évènements en ouvrant
 pas de sélectionner un intervalle de temps couvert par
 les logs (en haut à droite).
 
+
+
 ### Réaliser des requêtes manuelles sur ElasticSearch
 
 Vous pouvez souhaiter réaliser des requêtes complexes sur ElasticSearch et en
@@ -74,7 +76,8 @@ mieux est de :
 
 1. créer une requête via Kibana, dans l'onglet "Discover".
 2. récupérer cette requête au format JSON, en repliant le graphe de résultats, puis sous l'onglet "Request". Par exemple :
-    
+
+```
     {
       "size": 500,
       "sort": {
@@ -85,12 +88,13 @@ mieux est de :
           "query": {
             "query_string": {
               "query": "*",
-              "analyze_wildcard": true
+              "analyze_wildcard": true,
             }
           }
         }
       }
     }
+```
 
 3. Copier-coller cette requête dans un fichier `query.json`, puis réaliser la requête à l'aide du script fourni dans ce dépôt :
 

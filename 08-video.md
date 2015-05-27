@@ -23,7 +23,7 @@ La plupart des lecteurs vidéos disponibles peuvent faire les choses suivantes:
 
 Illustration 1:
 
-![](http://edx-partner-course-staff.readthedocs.org/en/latest/_images/Video_DownTrans_other.png)
+![](static/img/Video_DownTrans_other.png)
 
 ## Faire son lecteur vidéo: les exemples
 
@@ -44,6 +44,7 @@ Il est possible d'utiliser les lecteurs natifs des plateforme d'hébergement et 
 Dailymotion, sponsor de cet événement, sera là pour vous guider quant à l'intégration de fonctionnalités proposées dans les projets (Quiz Vidéo...).
 
 Voci quelques liens vers l'API dailymotion.
+
 - Lien vers le site développeur [ https://developer.dailymotion.com/](https://developer.dailymotion.com/)
 
 Il existe un nouveau player HTML5 avec une API similiaire à l'ancienne [API](https://developer.dailymotion.com/documentation#player-api)
@@ -51,6 +52,8 @@ Il existe un nouveau player HTML5 avec une API similiaire à l'ancienne [API](ht
 Vous trouverez plus d'information ici sur le [Nouveau Lecteur]([http://www.dailymotion.com/player).
 
 ### Daily Motion  - Quelques informations supplémentaires
+
+- Lien vers le site développeur [https://developer.dailymotion.com/](https://developer.dailymotion.com/)
 
 Voici un résumé court des fonctionalités du lecteur, modifiables par l' [API](https://developer.dailymotion.com/documentation#player-api).
 

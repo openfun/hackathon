@@ -39,7 +39,7 @@ Avant de créer votre VM, il faudra indiquer à Vagrant le répertoire dans lequ
 
 
     export VAGRANT_BOXES=/chemin/vers/mon/repertoire/de/torrents/
-    export FUN_RELEASE=2.11 # Si vous avez téléchargé la version 2.11 d'OpenFUN
+    export FUN_RELEASE=2.13 # Si vous avez téléchargé la version 2.13 d'OpenFUN
 
 ## Clonage des dépôts de code Open edx et OpenFUN (optionnel mais recommandé aux développeurs)
 
@@ -129,6 +129,7 @@ Pour lancer le service forum dans un terminal :
     sudo su forum
     ruby app.rb -p 18080
 
+
 # Version edX (Birch)
 
 Les étapes sont données en détail ici [https://github.com/edx/configuration/wiki/edX-Developer-Stack](https://github.com/edx/configuration/wiki/edX-Developer-Stack)
@@ -183,3 +184,17 @@ Tapez par exemple :
 
 
     fun lms.dev --help
+
+### Utilisateurs web
+
+Apres l'installation vous pouvez vous connecter au Lms ou au Studio avec les utilisateurs suivants qui ont tous pour mot de passe `edx`:
+
+    honor@example.com (super-utilisateur)
+    audit@example.com
+    staff@example.com
+
+
+### Documentation edX
+
+[https://github.com/edx/configuration/wiki/edX-Developer-Stack](https://github.com/edx/configuration/wiki/edX-Developer-Stack)
+>>>>>>> Add some info on devstack's web user

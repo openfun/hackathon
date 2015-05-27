@@ -31,7 +31,7 @@ Installation du xblock sdk :
 Maintenant depuis votre navigateur allez à cette adresse 127.0.0.1:8010.
 Si tout va bien la page suivante devrait apparaître :
 
-![](http://opencraft.com/doc/edx/xblock/_images/workbench_home.png "Optional title")
+![](static/img/workbench_home.png "Workbench homepage")
 
 ## Créons la structure de notre xblock
 

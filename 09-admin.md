@@ -56,7 +56,7 @@ Pour résoudre ce problème:
 
 Le service ElasticSearch écoute sur le port 9200:
 
-    $ curl localhost:9200
+    curl localhost:9200
     {
       "ok" : true,
       "status" : 200,
@@ -104,4 +104,4 @@ Sur le plan des composants:
 - Les bases de données (MySQL pour les données étudiants et administration, Mongodb pour la structure de cours et données des forums)
 
 Voici un schéma général d'une installation Open edX:
-![Edx architecture](http://open.edx.org/sites/default/files/wysiwyg/open-edx-pages/edX_architecture_CMS_LMS_0.png)
+![Edx architecture](static/img/edX_architecture_CMS_LMS_0.png)

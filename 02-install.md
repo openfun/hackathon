@@ -73,7 +73,7 @@ lancer votre machine virtuelle.  Pour cela, clonez le dépôt fun-boxes :
 Lancez votre machine virtuelle :
 
     cd fun-boxes/releases/
-    vagrant up
+    vagrant up --no-provision 
 
 En cas de problème, pensez à consulter le README dans lequel votre problème est
 peut-être déjà décrit.

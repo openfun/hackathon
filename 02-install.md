@@ -82,6 +82,9 @@ Lancez votre machine virtuelle :
     cd fun-boxes/releases/
     vagrant up --no-provision 
 
+
+Notez que nous utilisons `--no-provision` : c'est parce que l'image que vous utilisez est déjà configurée et n'a pas besoin de l'option `provision` de Vagrant.
+
 En cas de problème, pensez à consulter le README dans lequel votre problème est
 peut-être déjà décrit.
 

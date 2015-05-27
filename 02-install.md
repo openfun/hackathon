@@ -53,10 +53,17 @@ résultat dans votre VM. Pour cela :
     cd /home/user/repos/
 
     # Clonez les dépôts
-    git clone https://github.com/openfun/fun-apps
-    git clone https://github.com/openfun/edx-platform # cela peut prendre un peu de temps...
-    mkdir themes && git clone https://github.com/openfun/edx-theme themes/fun/
+    # Et faire un 'git checkout' pour utiliser la branche qui convient - ici, nous pointons sur le tag 'FUN_RELEASE'
 
+    git clone https://github.com/openfun/fun-apps
+    cd fun-apps && git checkout $FUN_RELEASE && cd -
+    
+    git clone https://github.com/openfun/edx-platform # cela peut prendre un peu de temps...
+    cd edx-platform && git checkout $FUN_RELEASE && cd -
+    
+    mkdir themes && git clone https://github.com/openfun/edx-theme themes/fun/
+    cd themes/fun/ && git checkout $FUN_RELEASE && cd -
+    
     # Indiquez à Vagrant le répertoire dans lequel vous avez cloné les dépôts
     export VAGRANT_MOUNT_BASE=/home/user/repos
 

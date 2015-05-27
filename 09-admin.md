@@ -38,10 +38,18 @@ Quelques commande pour acceder aux collections Mongo :
     system.indexes
     > db.modulestore.find()
 
-Apres un reboot de la machine virtuelle, il arrive que le service Mongo ne redemarre pas :
+Apres un reboot de la machine virtuelle, il arrive que le service Mongo ne redemarre pas.
+
+
+    File "/edx/app/edxapp/venvs/edxapp/local/lib/python2.7/site-packages/pymongo/mongo_client.py", line 369, in __init__
+        raise ConnectionFailure(str(e))
+    ConnectionFailure: [Errno 111] Connection refused
+
+
+Pour résoudre ce problème:
     
     sudo rm /edx/var/mongo/mongodb/mongod.lock
-    sudo service mongodb start
+    sudo service mongod restart
 
 
 ### ElasticSearch

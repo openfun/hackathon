@@ -20,7 +20,7 @@ tester ces applications. Dans la suite de cette section, nous allons voir les
 
 # Version Open FUN
 
-##  FUN - Téléchargement (optionnel mais fortement recommandé)
+## FUN - Téléchargement (optionnel mais fortement recommandé)
 
 Les VM OpenFUN sont disponibles au téléchargement via bittorrent. Si vous ne
 disposez pas d'un client bittorrent (tel que
@@ -37,7 +37,6 @@ version la plus récente d'OpenFUN dans votre client bittorrent favori.
 
 Avant de créer votre VM, il faudra indiquer à Vagrant le répertoire dans lequel vous avez téléchargé les images :
 
-
     export VAGRANT_BOXES=/chemin/vers/mon/repertoire/de/torrents/
     export FUN_RELEASE=2.13 # Si vous avez téléchargé la version 2.13 d'OpenFUN
 
@@ -52,23 +51,22 @@ résultat dans votre VM. Pour cela :
     mkdir /home/user/repos
     cd /home/user/repos/
 
-    # Clonez les dépôts
-    # Et faire un 'git checkout' pour utiliser la branche qui convient - ici, nous pointons sur le tag 'FUN_RELEASE'
-
+    # fun-apps : la branche 'dev' est la branche de développement
     git clone https://github.com/openfun/fun-apps
-    cd fun-apps && git checkout $FUN_RELEASE && cd -
+    cd fun-apps && git checkout dev && cd -
     
+    # edx-platform : nous utilisons la branche associée à la release
     git clone https://github.com/openfun/edx-platform # cela peut prendre un peu de temps...
-    cd edx-platform && git checkout $FUN_RELEASE && cd -
+    cd edx-platform && git checkout fun/release-$FUN_RELEASE && cd -
     
+    # Utilisation du thème FUN
     mkdir themes && git clone https://github.com/openfun/edx-theme themes/fun/
-    cd themes/fun/ && git checkout $FUN_RELEASE && cd -
+    cd themes/fun/ && git checkout dev && cd -
     
     # Indiquez à Vagrant le répertoire dans lequel vous avez cloné les dépôts
     export VAGRANT_MOUNT_BASE=/home/user/repos
 
 ## Lancement de la machine virtuelle
-
 
 Après avoir (éventuellement) réalisé les étapes ci-dessus, vous êtes prêt à
 lancer votre machine virtuelle.  Pour cela, clonez le dépôt fun-boxes :
@@ -82,8 +80,10 @@ Lancez votre machine virtuelle :
     cd fun-boxes/releases/
     vagrant up --no-provision 
 
-
-Notez que nous utilisons `--no-provision` : c'est parce que l'image que vous utilisez est déjà configurée et n'a pas besoin de l'option `provision` de Vagrant.
+Notez que nous utilisons `--no-provision` : c'est parce que l'image téléchargée
+est déjà configurée et n'a donc pas besoin d'être "provisionnée" par Vagrant.
+Le provisionnement peut prendre plus ou moins longtemps, selon la qualité de
+votre connexion internet...
 
 En cas de problème, pensez à consulter le README dans lequel votre problème est
 peut-être déjà décrit.
@@ -125,86 +125,57 @@ Vous pouvez également lancer les tests associés à FUN :
     fun lms.test test ../fun-apps/
     fun cms.test test ../fun-apps/
 
-Sous le capot, 'fun' est un raccourci permettant d'exécuter une variété de
-commandes. Pour plus d'informations, consultez la documentation de fun-cmd :
+Sous le capot, `fun` est un raccourci permettant d'exécuter une variété de
+commandes Django. Pour plus d'informations, consultez la documentation de
+fun-cmd :
 [https://github.com/openfun/fun-cmd](https://github.com/openfun/fun-cmd)
-
 
 ## Le forum
 
-Le forum fonctionne avec un service REST Ruby qui utilise Mongo pour stocker les messages, ElasticSearch pour les indexer et un client Django qui se trouve dans le dépôt `edx-platform`.
+Le forum fonctionne avec un service REST Ruby qui utilise Mongo pour stocker
+les messages, ElasticSearch pour les indexer et un client Django qui se trouve
+dans le dépôt `edx-platform`.
 
-Pour lancer le service forum dans un terminal :
+Pour pouvoir utiliser les forums dans le LMS, vous devrez donc démarrer le
+service REST, comme suit :
 
     sudo su forum
     ruby app.rb -p 18080
 
+# edX sans le FUN
 
-# Version edX (Birch)
+Il est tout à fait possible de faire tourner Open edX sans la surcouche FUN. Pour éviter d'avoir à reprovisionner la VM, FUN fournit des images déjà provisionnées. Par exemple, la dernière version (birch) d'Open edX peut être téléchargée [ici](http://files.alt.openfun.fr/vagrant-images/edx/).
 
-Les étapes sont données en détail ici [https://github.com/edx/configuration/wiki/edX-Developer-Stack](https://github.com/edx/configuration/wiki/edX-Developer-Stack)
+Le lancement de la VM s'effectue à peu près de la même manière que précédemment :
 
-## La préparation
-
-Créer un répertoire et cloner les repositories principaux:
-
-
-    mkdir devstack
-    cd devstack
-    curl -L https://raw.githubusercontent.com/edx/configuration/master/vagrant/release/devstack/Vagrantfile > Vagrantfile
-    git clone https://github.com/edx/edx-platform.git
-    git clone https://github.com/edx/cs_comments_service.git
-    vagrant plugin install vagrant-vbguest
+    cd fun-boxes/edx/
+    export VAGRANT_BOXES=/chemin/vers/mon/repertoire/de/torrents/
     vagrant up
 
-
-## Lancer la VM
-
-Une fois que l'installation s'est bien déroulée, vous pouvez démarrer votre devstack en tapant:
-
+Vous pouvez alors vous connecter à votre VM et lancer le LMS ou le Studio :
 
     vagrant ssh
     sudo su edxapp
-    paver devstack lms &
-    paver devstack studio &
 
+    paver devstack lms
+    paver devstack studio
 
-Comme pour l'installation de FUN, le forum est démarré par un:
-
-
-    sudo su forum
-    bundle install
-    ruby app.rb -p 18080
-
+Plus de documentation est disponible [sur le site d'Open edX](https://github.com/edx/configuration/wiki/edX-Developer-Stack).
 
 # Notes
 
-### Soucis avec la VM
+## Utilisateurs web
 
-Il a été constaté que parfois l'application était très lente voire se bloquait complètement. Ceci est dû à un problème de DNS
-dans virtual box. Voir [http://stackoverflow.com/questions/28562968/django-1-4-18-dev-server-slow-to-respond-under-virtualbox/30356662#30356662](http://stackoverflow.com/questions/28562968/django-1-4-18-dev-server-slow-to-respond-under-virtualbox/30356662#30356662).
-La solution est de rajouter 10.0.2.2 10.0.2.2 dans votre /etc/hosts
-
-Pour d'autres trucs et astuces voir la page: [https://github.com/openfun/fun-boxes](https://github.com/openfun/fun-boxes)
-
-## La commande FUN
-
-La commande 'fun' vous donne accès directement à la commande de base appelée 'manage.py'.
-Tapez par exemple :
-
-
-    fun lms.dev --help
-
-### Utilisateurs web
-
-Apres l'installation vous pouvez vous connecter au Lms ou au Studio avec les utilisateurs suivants qui ont tous pour mot de passe `edx`:
+Apres l'installation vous pouvez vous connecter au Lms ou au Studio avec les utilisateurs suivants qui ont tous pour mot de passe `edx` :
 
     honor@example.com (super-utilisateur)
     audit@example.com
     staff@example.com
 
+## Soucis avec la VM
 
-### Documentation edX
+Il a été constaté que parfois l'application était très lente voire se bloquait complètement. Ceci est dû à un problème de DNS
+dans virtual box. Voir [http://stackoverflow.com/questions/28562968/django-1-4-18-dev-server-slow-to-respond-under-virtualbox/30356662#30356662](http://stackoverflow.com/questions/28562968/django-1-4-18-dev-server-slow-to-respond-under-virtualbox/30356662#30356662).
+La solution est de rajouter 10.0.2.2 10.0.2.2 dans votre /etc/hosts
 
-[https://github.com/edx/configuration/wiki/edX-Developer-Stack](https://github.com/edx/configuration/wiki/edX-Developer-Stack)
->>>>>>> Add some info on devstack's web user
+Pour d'autres trucs et astuces, consulter [le README de fun-boxes](https://github.com/openfun/fun-boxes).

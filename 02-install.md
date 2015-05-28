@@ -3,7 +3,7 @@ title: Installation d'une machine virtuelle OpenFUN / edX
 layout: default
 ---
 
-# Installation d'une machine virtuelle OpenFUN / edX {#install}
+# Installation d'une machine virtuelle OpenFUN / edX / IONISx {#install}
 
 Les composants nécessaires à l'installation de FUN ou d'edX sont nombreux et
 relativement complexes ; c'est pourquoi il existe des machines virtuelles (VM)
@@ -158,6 +158,65 @@ Vous pouvez alors vous connecter à votre VM et lancer le LMS ou le Studio :
     paver devstack studio
 
 Plus de documentation est disponible [sur le site d'Open edX](https://github.com/edx/configuration/wiki/edX-Developer-Stack).
+
+## Installation de la plateform IONISx
+
+De la même manière que FUN, IONISx propose une version d'Open edX dotée d'un thème personnalisé. L'environnement de développement IONISx peut être simplement installé en une commande :
+
+```shell
+curl -sL http://hack.ioni.sx/birch | sh
+```
+
+La commande ci-dessus va installer une *devstack* Open edX, comprenant les composants de la plateforme suivants :
+
+* [LMS](https://github.com/edx/edx-platform) avec le [*responsive theme* IONISx](https://github.com/IONISx/edx-theme)
+* [Studio](https://github.com/edx/edx-platform)
+* [Forum](https://github.com/edx/cs_comments_service)
+ 
+### Gestion
+
+Une fois votre *devstack* Open edX installée, vous avez trois nouveaux répertoires dans votre dossier courant :
+
+* `edx-platform`
+* `themes`
+* `cs_comments_service`
+
+Ces répertoires sont les dépôts [Git](https://git-scm.com/) des différentes applications listées ci-dessus.
+Ils sont synchronisés avec votre machine virtuelle.
+
+Pour vous connecter à la machine virtuelle, entrez
+
+```shell
+vagrant ssh
+```
+
+#### LMS
+
+Pour lancer le LMS, depuis votre machine virtuelle, connectez-vous avec l’utilisateur `edxapp` :
+
+```shell
+sudo su edxapp
+```
+
+Vous allez automatiquement être placé dans le répertoire `/edx/app/edxapp/edx-platform` (synchronisé avec le répertoire `edx-platform` sur votre machine physique).
+
+Lancez le LMS avec la commande suivante :
+
+```shell
+paver devstack lms
+```
+
+Vous pouvez maintenant naviguer sur le LMS, sur votre machine physique, en vous rendant sur [http://localhost:8000](http://localhost:8000).
+
+#### Studio
+
+Pour lancer Studio, de la même manière que pour le LMS, lancez
+
+```shell
+paver devstack studio
+```
+
+Accédez à Studio, sur votre machine physique, en vous rendant sur [http://localhost:8001](http://localhost:8001).
 
 ## Import d'un cours dans le Studio
 

@@ -218,6 +218,18 @@ paver devstack studio
 
 Accédez à Studio, sur votre machine physique, en vous rendant sur [http://localhost:8001](http://localhost:8001).
 
+## Se connecter au LMS/CMS
+
+Apres l'installation vous pouvez vous connecter au Lms ou au Studio avec les
+utilisateurs suivants :
+
+| Nom d’utilisateur | Mot de passe |
+| -- | -- |
+| staff@example.com | edx |
+| honor@example.com | edx |
+| audit@example.com | edx |
+
+
 ## Import d'un cours dans le Studio
 
 Votre instance de edX/FUN est pour l'instant vide de cours. Vous pouvez importer un cours existant dans le studio. Pour cela, il suffit de créer un cours, comme suit :
@@ -232,17 +244,7 @@ importer" et sélectionner ce fichier que vous venez de télépcharger. Ce cours
 est maintenant disponible dans le LMS et vous pouvez le visualiser dans [la
 liste des cours](http://127.0.0.1:8000/cours/).
 
-## Notes
-
-### Utilisateurs web
-
-Apres l'installation vous pouvez vous connecter au Lms ou au Studio avec les utilisateurs suivants qui ont tous pour mot de passe `edx` :
-
-    honor@example.com (super-utilisateur)
-    audit@example.com
-    staff@example.com
-
-### Soucis avec la VM
+## Soucis avec la VM
 
 Il a été constaté que l'application est parfois très lente, voire se bloque
 complètement. Ceci est dû à un problème de lenteur de la fonction

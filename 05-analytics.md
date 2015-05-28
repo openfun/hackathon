@@ -12,7 +12,7 @@ extraits de ses machines de productions à fins d'analyse.
 
 ## Téléchargement des fichiers de logs
 
-TODO
+Les fichiers de logs sont disponibles au téléchargement pour la période du 1er février au 30 avril 2015 : [http://files.alt.openfun.fr/analytics/anonymized/]. (Compter ~120 Mo/jour, soit ~4 Go/mois).
 
 ## Source des logs
 
@@ -65,8 +65,6 @@ Kibana et observer ces évènements en ouvrant
 [http://localhost:5601](http://localhost:5601) dans votre navigateur. N'oubliez
 pas de sélectionner un intervalle de temps couvert par
 les logs (en haut à droite).
-
-
 
 ### Réaliser des requêtes manuelles sur ElasticSearch
 

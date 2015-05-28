@@ -185,8 +185,13 @@ Apres l'installation vous pouvez vous connecter au Lms ou au Studio avec les uti
 
 ### Soucis avec la VM
 
-Il a été constaté que parfois l'application était très lente voire se bloquait complètement. Ceci est dû à un problème de DNS
-dans virtual box. Voir [http://stackoverflow.com/questions/28562968/django-1-4-18-dev-server-slow-to-respond-under-virtualbox/30356662#30356662](http://stackoverflow.com/questions/28562968/django-1-4-18-dev-server-slow-to-respond-under-virtualbox/30356662#30356662).
-La solution est de rajouter 10.0.2.2 10.0.2.2 dans votre /etc/hosts
+Il a été constaté que l'application est parfois très lente, voire se bloque
+complètement. Ceci est dû à un problème de lenteur de la fonction
+`gethostbyname` dans votre machine virtuelle. Voir [ici la version longue des
+explications](http://stackoverflow.com/questions/28562968/django-1-4-18-dev-server-slow-to-respond-under-virtualbox/30356662#30356662).
 
-Pour d'autres trucs et astuces, consulter [le README de fun-boxes](https://github.com/openfun/fun-boxes).
+La solution consiste à rajouter l'adresse de votre gateway (dans la plupart des
+cas : `10.0.2.2 10.0.2.2`) dans le fichier `/etc/hosts` de votre machine
+virtuelle.
+
+Pour la résolution d'autres problèmes, consulter [le README de fun-boxes](https://github.com/openfun/fun-boxes).

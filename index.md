@@ -41,3 +41,7 @@ vous pouvez la télécharger à partir
 Vous allez également avoir besoin des *Vagrant guest additions*:
 
     vagrant plugin install vagrant-vbguest
+
+## Et maintenant ?
+
+Pour la suite, rendez-vous sur [la page d'installation de FUN/edX](/hackathon/02-install.html). 

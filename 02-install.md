@@ -11,16 +11,13 @@ disponibles en simple téléchargement qui permettent de commencer rapidement à
 tester ces applications. Dans la suite de cette section, nous allons voir les
 étapes à suivre pour obtenir un environnement de développement fonctionnel.
 
-# Prérequis
+## Prérequis
 
 - Configuration recommandée : Ubuntu/Linux 14.04
 - VirtualBox >= 4.3.12
 - Vagrant >= 1.6.5
 
-
-# Version Open FUN
-
-## FUN - Téléchargement (optionnel mais fortement recommandé)
+## Téléchargement (optionnel mais fortement recommandé)
 
 Les VM OpenFUN sont disponibles au téléchargement via bittorrent. Si vous ne
 disposez pas d'un client bittorrent (tel que
@@ -142,7 +139,7 @@ service REST, comme suit :
     sudo su forum
     ruby app.rb -p 18080
 
-# edX sans le FUN
+## edX sans le FUN
 
 Il est tout à fait possible de faire tourner Open edX sans la surcouche FUN. Pour éviter d'avoir à reprovisionner la VM, FUN fournit des images déjà provisionnées. Par exemple, la dernière version (birch) d'Open edX peut être téléchargée [ici](http://files.alt.openfun.fr/vagrant-images/edx/).
 
@@ -162,9 +159,23 @@ Vous pouvez alors vous connecter à votre VM et lancer le LMS ou le Studio :
 
 Plus de documentation est disponible [sur le site d'Open edX](https://github.com/edx/configuration/wiki/edX-Developer-Stack).
 
-# Notes
+## Import d'un cours dans le Studio
 
-## Utilisateurs web
+Votre instance de edX/FUN est pour l'instant vide de cours. Vous pouvez importer un cours existant dans le studio. Pour cela, il suffit de créer un cours, comme suit :
+
+![Création d'un cours](static/img/import_course.png)
+
+Une fois que le cours est créé, allez dans Outils -> Importer. Téléchargez [ce
+cours sur
+Java](http://files.alt.openfun.fr/courses/CNAM%20Ecrivez%20votre%20premier%20cours%20en%20Java.tar.gz)
+gracieusement fourni par le CNAM. Puis cliquez sur "Choisissez un fichier à
+importer" et sélectionner ce fichier que vous venez de télépcharger. Ce cours
+est maintenant disponible dans le LMS et vous pouvez le visualiser dans [la
+liste des cours](http://127.0.0.1:8000/cours/).
+
+## Notes
+
+### Utilisateurs web
 
 Apres l'installation vous pouvez vous connecter au Lms ou au Studio avec les utilisateurs suivants qui ont tous pour mot de passe `edx` :
 
@@ -172,7 +183,7 @@ Apres l'installation vous pouvez vous connecter au Lms ou au Studio avec les uti
     audit@example.com
     staff@example.com
 
-## Soucis avec la VM
+### Soucis avec la VM
 
 Il a été constaté que parfois l'application était très lente voire se bloquait complètement. Ceci est dû à un problème de DNS
 dans virtual box. Voir [http://stackoverflow.com/questions/28562968/django-1-4-18-dev-server-slow-to-respond-under-virtualbox/30356662#30356662](http://stackoverflow.com/questions/28562968/django-1-4-18-dev-server-slow-to-respond-under-virtualbox/30356662#30356662).

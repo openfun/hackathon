@@ -1,3 +1,8 @@
+---
+title: Moyens de communication
+layout: default
+---
+
 # Moyens de communication
 
 Ce gitbook propose une présentation des différents outils et modules qui composent [Open edX](http://openedx.org). Il présente et explique comment installer facilement chacun de ces composants.

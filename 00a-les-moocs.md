@@ -1,3 +1,8 @@
+---
+title: Les MOOCs
+layout: default
+---
+
 # Les MOOCs
 
 Ce document a été rédigé par [Yoni Dayan](mailto:yoni@dayan.email) pour IONISx.

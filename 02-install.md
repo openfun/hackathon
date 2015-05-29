@@ -99,21 +99,22 @@ vous y connecter via ssh et lancer un serveur web local :
     # La plupart des applications sont exécutées par l'utilisateur edxapp
     sudo su edxapp
 
-    # Cette commande réalise à la fois l'installation des dépendances, la
-    # collecte des données statiques et le lancement de l'application LMS
-    fun lms.dev run
+    # Ces commandes démarrent les applications LMS et Studiio sans réinstaller les dépendances
+
+    fun lms.dev run --fast
+    fun cms.dev run --fast
 
 Ouvrez maintenant votre navigateur (de votre machine hôte) à l'adresse
 [http://127.0.0.1:8000](http://127.0.0.1:8000) : vous devriez voir apparaître la page d'accueil de FUN.
 Win!
 
-    # Pour sauter les phases de vérification de l'environnement, vous pouvez
-    # exécuter à la place de la commande précédente :
-    fun lms.dev run --fast
+    # Pour réinstaller les dépendances et vérifier l'environnement, vous pouvez
+    # exécuter la commande 'fun' sans l'option '--fast'
+    fun lms.dev run
 
     # De même, dans un autre terminal, vous pouvez lancer le Studio/CMS :
-    fun cms.dev run --fast
-
+    fun cms.dev run
+    
 Le Studio/CMS est alors visible à l'adresse http://127.0.0.1:8001.
 
 Vous pouvez également lancer les tests associés à FUN :

@@ -28,7 +28,7 @@ Vous allez très probablement avoir besoin d'un certain nombre de logiciels que 
 Il est nécessaire d'avoir la version >= 1.5.3 de Vagrant. Si la version
 présente dans les dépôts de votre distribution n'est pas suffisamment récente,
 vous pouvez la mettre à jour à partir de
-[http://www.vagrantup.com/downloads](la page téléchargement de Vagrant).
+[la page téléchargement de Vagrant](http://www.vagrantup.com/downloads).
 
 De même, si vous ne disposez pas de la version la plus récente de Virtualbox,
 vous pouvez la télécharger à partir

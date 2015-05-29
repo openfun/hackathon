@@ -12,7 +12,7 @@ extraits de ses machines de productions à fins d'analyse.
 
 ## Téléchargement des fichiers de logs
 
-Les fichiers de logs sont disponibles au téléchargement pour la période du 1er février au 30 avril 2015 : [http://files.alt.openfun.fr/analytics/anonymized/]. (Compter ~120 Mo/jour, soit ~4 Go/mois).
+Les fichiers de logs sont disponibles au téléchargement pour la période du 1er février au 30 avril 2015 : [http://files.alt.openfun.fr/analytics/anonymized/](http://files.alt.openfun.fr/analytics/anonymized/). (Compter ~120 Mo/jour, soit ~4 Go/mois).
 
 ## Source des logs
 
